@@ -1,34 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 毎日誰かのプルリクを脳死でマージするアドベントカレンダー
 
-## Getting Started
+## 概要
 
-First, run the development server:
+### アドベントカレンダーURL
+https://qiita.com/advent-calendar/2021/full-scratch-awesome-app-nextjs
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### 企画概要
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+初日に私が空っぽのNext.jsプロジェクトを作って公開しておくので、25日間毎日誰かがPull Request出して脳死でマージしていき、12月25日に何ができているでしょう？アドベントカレンダーです。
+ノリで作ったアドベントカレンダーなので気軽に参加してください！いったい最後はどんなアプリケーションになってることやら・・・
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+なんの役にも立たないコンポーネント作って設置するもよし、
+自分の思う最強のESLintルールを書き込むもよし、
+Firebase等のPaaSを接続する実装をしてセットアップ手順をREADMEに残しておくもよしです。
+考えた当初は、みんなのNext.jsの知見が集まるといいなと思っていましたが、ネタ実装でも歓迎です。
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### ルール/ライセンスなど
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- アドベントカレンダーに記入するURLは、プルリクのURLでも、ご自身の解説記事でもOKです
+- PRを出すとき、カレンダー上に登録したユーザーIDを述べてください（テンプレートにできたらします）。プルリクはリポジトリをForkしてmainリポジトリに対して向けてもらうのが良いかと思います。OSSコントリビュートしたこと無い方の練習台としてもご活用ください笑
+- 前の人が作った機能を改善したり影響範囲に含めるのはOKです、一方、完全に削除するのはNGです
+- PRを出すのは担当当日にしてください
+- 担当当日であれば複数出してもOKです。わかりやすい粒度でどうぞ
+- 実装されたソースコードはMITライセンスとし、アドベントカレンダー終了後も作成者(@mejileben)のGitHubアカウントに残しておきます
 
-## Learn More
+## ToDo
 
-To learn more about Next.js, take a look at the following resources:
+- 脳死マージの自動化
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 企画者
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+https://twitter.com/Meijin_garden
 
-## Deploy on Vercel
+## 免責事項
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- 本企画への参加は自己責任でお願いします。参加によって生じたいかなる損害の責任も負いません
