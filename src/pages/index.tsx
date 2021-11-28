@@ -10,7 +10,7 @@ const Home: NextPage = () => {
         <title>毎日誰かのプルリクを脳死でマージするアドベントカレンダー</title>
         <meta
           name="description"
-          content="毎日誰かのプルリクを脳死でマージするアドベントカレンダー"
+          content="初日に私が空っぽのNext.jsプロジェクトを作って公開しておくので、25日間毎日誰かがPull Request出して脳死でマージしていき、12月25日に何ができているでしょう？アドベントカレンダーです。"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
