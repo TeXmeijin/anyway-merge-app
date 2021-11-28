@@ -3,6 +3,8 @@ on:
   pull_request:
     types:
       - opened
+      - labeled
+      - unlabeled
 jobs:
   automerge:
     runs-on: ubuntu-latest
