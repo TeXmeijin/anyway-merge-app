@@ -2,6 +2,9 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Link from 'next/link';
+
+const contributors= ["meijin", "sassy"]
 
 const Home: NextPage = () => {
   return (
@@ -32,6 +35,20 @@ const Home: NextPage = () => {
         </p>
         <p className={styles.description}>
           なんか機能を追加したら導線をトップページに追加するのもOKです。
+        </p>
+
+        <h2 className={styles.subtitle}>contributors</h2>
+
+        <p>
+          <ul className={styles.list}>
+          {
+            contributors.map(member => (
+              <li className={styles.listitem}>
+                <Link href={`/contributors/${member}`}>{member}</Link>
+              </li>
+            ))
+          }
+          </ul>
         </p>
       </main>
 

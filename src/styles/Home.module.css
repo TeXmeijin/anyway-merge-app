@@ -48,8 +48,25 @@
 }
 
 .title,
-.description {
+.description,
+.subtitle {
   text-align: center;
+}
+
+.subtitle {
+  margin: 0;
+  margin-top: 2rem;
+  font-size: 1.7rem;
+}
+
+.list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.listitem {
+  font-size: 1.3rem;
+  color: #55c500;
 }
 
 .description {
