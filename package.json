@@ -5,9 +5,24 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint-staged": "lint-staged",
+    "lint:prettier": "prettier --check src",
+    "fix:prettier": "prettier -w src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,jsx,tsx}": [
+      "yarn lint:prettier"
+    ]
   },
   "dependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
     "next": "12.0.4",
     "react": "17.0.2",
     "react-dom": "17.0.2"
@@ -17,6 +32,8 @@
     "@types/react": "17.0.37",
     "eslint": "7",
     "eslint-config-next": "12.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.5.0",
     "typescript": "4.5.2"
   }
 }
