@@ -2,9 +2,9 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import Link from 'next/link';
+import Link from "next/link";
 
-const contributors= ["meijin", "sassy"]
+const contributors = ["meijin", "sassy"];
 
 const Home: NextPage = () => {
   return (
@@ -41,13 +41,11 @@ const Home: NextPage = () => {
 
         <p>
           <ul className={styles.list}>
-          {
-            contributors.map(member => (
-              <li className={styles.listitem}>
+            {contributors.map((member) => (
+              <li key={member} className={styles.listitem}>
                 <Link href={`/contributors/${member}`}>{member}</Link>
               </li>
-            ))
-          }
+            ))}
           </ul>
         </p>
       </main>
