@@ -1,9 +1,9 @@
 # 🎄参加方法(重要)
 
 - ブランチを適当に切って作業し、Pull Requestを出してください
-  - ForkしたリポジトリからのPull RequestでもOKです
-- [こちらのGitHub Actions](https://github.com/pascalgn/automerge-action)を設定しているため、`automerge`ラベルを付けたPull Requestが自動でマージされます。なのでPull Request提出後、これでいくぞ！と思ったらラベルを付けてください
-  - Forkした場合どうなるかなど確認できていないので、動かないかもしれないです。その場合でも、企画者本人がしばらく毎日チェックしてマージするつもりです
+  - ForkしたリポジトリからのPull RequestでOKです
+- 私はDraftではないPull Requestを見たら脳死でマージしてしまうので、作成途中でPull Requestを作る方はDraftにしてください
+  - 自動でマージしたかったのですが設定する時間がなく、今のところできてません。毎日見るようにします
   - 途中でどなたかがCI等のGitHub Actionsを設定していただいた場合、この限りではなくなる可能性があります
     - 言い換えると、この自動マージフロー自体へのカイゼンPRもお待ちしております
   - もしリポジトリに2日以上音沙汰なければ https://twitter.com/Meijin_garden までご連絡ください
