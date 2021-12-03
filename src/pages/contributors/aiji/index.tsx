@@ -9,6 +9,10 @@ function Meijin() {
           <ContributerHeading>Aiji Uejima</ContributerHeading>
           <p>株式会社エイチームライフスタイルでリードエンジニアやってます</p>
           <p>トップページのリアルタイムカーソルを実装しました</p>
+          <p>運が良ければ誰かのマウスカーソルが見れます</p>
+          <p>
+            自分以外に誰もいなければ、別ウィンドウで同時に2画面開いてみてください
+          </p>
           <p>
             <a
               target="_blank"
