@@ -3,8 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
-
-const contributors = ["meijin", "sassy"];
+import { contributors } from '../constants';
 
 const Home: NextPage = () => {
   return (
