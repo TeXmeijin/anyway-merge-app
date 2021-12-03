@@ -3,8 +3,8 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
-
-const contributors = ["meijin", "sassy"];
+import { contributors } from '../constants';
+import { VFXSpan, VFXImg } from 'react-vfx';
 
 const Home: NextPage = () => {
   return (
@@ -23,7 +23,10 @@ const Home: NextPage = () => {
           <a href="https://qiita.com/advent-calendar/2021/full-scratch-awesome-app-nextjs">
             毎日誰かのプルリクを脳死でマージするアドベントカレンダー
           </a>
-          へようこそ！
+          <br/>
+          へ
+          <br/>
+          <VFXSpan shader=''>ようこそ！</VFXSpan>
         </h1>
 
         <p className={styles.description}>
@@ -37,7 +40,9 @@ const Home: NextPage = () => {
           なんか機能を追加したら導線をトップページに追加するのもOKです。
         </p>
 
-        <h2 className={styles.subtitle}>contributors</h2>
+        <h2 className={styles.subtitle}>
+          <VFXSpan>contributors</VFXSpan>
+        </h2>
 
         <p>
           <ul className={styles.list}>
@@ -58,7 +63,7 @@ const Home: NextPage = () => {
         >
           Powered by{" "}
           <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            <VFXImg src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
