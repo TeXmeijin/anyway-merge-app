@@ -1,7 +1,7 @@
 namespace NodeJS {
   interface ProcessEnv extends NodeJS.ProcessEnv {
     SECRET: string;
-    SIGIN_USERNAME: string;
-    SIGIN_PASSWORD: string;
+    SIGNIN_USERNAME: string;
+    SIGNIN_PASSWORD: string;
   }
 }

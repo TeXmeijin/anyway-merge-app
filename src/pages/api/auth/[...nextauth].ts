@@ -15,10 +15,10 @@ export default NextAuth({
       },
       async authorize(credentials, _req) {
         if (
-          credentials?.username === process.env.SIGIN_USERNAME &&
-          credentials?.password === process.env.SIGIN_PASSWORD
+          credentials?.username === process.env.SIGNIN_USERNAME &&
+          credentials?.password === process.env.SIGNIN_PASSWORD
         ) {
-          return { id: 1, name: process.env.SIGIN_USERNAME };
+          return { id: 1, name: process.env.SIGNIN_USERNAME };
         }
         // Return null if user data could not be retrieved
         return null;
