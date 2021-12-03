@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { contributors } from '../constants';
+import { VFXSpan, VFXImg } from 'react-vfx';
 
 const Home: NextPage = () => {
   return (
@@ -22,7 +23,10 @@ const Home: NextPage = () => {
           <a href="https://qiita.com/advent-calendar/2021/full-scratch-awesome-app-nextjs">
             毎日誰かのプルリクを脳死でマージするアドベントカレンダー
           </a>
-          へようこそ！
+          <br/>
+          へ
+          <br/>
+          <VFXSpan>ようこそ！</VFXSpan>
         </h1>
 
         <p className={styles.description}>
@@ -57,7 +61,7 @@ const Home: NextPage = () => {
         >
           Powered by{" "}
           <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            <VFXImg src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
