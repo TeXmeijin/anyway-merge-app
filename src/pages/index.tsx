@@ -1,53 +1,26 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { contributors } from "../constants";
 import { VFXSpan, VFXImg } from "react-vfx";
-import { signIn, signOut, useSession } from "next-auth/react";
+import Navbar from "../components/atoms/navbar";
 
 const Home: NextPage = () => {
-  const { data: session, status } = useSession();
-
   return (
     <>
-      <div className={styles.navbar}>
-        <div>
-          <Link href="/">
-            <a>サイトロゴ</a>
-          </Link>
-        </div>
-        <div>
-          {status === "authenticated" && (
-            <>
-              <div>
-                ログイン中：{session?.user.name}さん　
-                <button onClick={() => signOut()}>ログアウト</button>
-              </div>
-            </>
-          )}
-          {status === "unauthenticated" && (
-            <>
-              <div>
-                未ログイン　<button onClick={() => signIn()}>ログイン</button>
-              </div>
-            </>
-          )}
-        </div>
-      </div>
-      <div className={styles.container}>
-        <Head>
-          <title>
-            毎日誰かのプルリクを脳死でマージするアドベントカレンダー
-          </title>
-          <meta
-            name="description"
-            content="初日に私が空っぽのNext.jsプロジェクトを作って公開しておくので、25日間毎日誰かがPull Request出して脳死でマージしていき、12月25日に何ができているでしょう？アドベントカレンダーです。"
-          />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
+      <Head>
+        <title>毎日誰かのプルリクを脳死でマージするアドベントカレンダー</title>
+        <meta
+          name="description"
+          content="初日に私が空っぽのNext.jsプロジェクトを作って公開しておくので、25日間毎日誰かがPull Request出して脳死でマージしていき、12月25日に何ができているでしょう？アドベントカレンダーです。"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
+      <Navbar />
+
+      <div className={styles.container}>
         <main className={styles.main}>
           <h1 className={styles.title}>
             <a href="https://qiita.com/advent-calendar/2021/full-scratch-awesome-app-nextjs">
