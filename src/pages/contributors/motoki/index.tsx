@@ -26,6 +26,15 @@ function Motoki() {
               motoki-watanabe.net
             </a>
           </p>
+          <p>
+            <a
+              target="_blank"
+              rel="noreferer noreferrer"
+              href="https://tech.motoki-watanabe.net"
+            >
+              技術ブログ
+            </a>
+          </p>
         </div>
       </div>
     </div>
