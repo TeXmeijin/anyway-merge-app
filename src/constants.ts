@@ -1,1 +1,1 @@
-export const contributors = ["meijin", "sassy"];
+export const contributors = ["meijin", "sassy", "motoki"];

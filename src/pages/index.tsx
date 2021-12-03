@@ -26,7 +26,7 @@ const Home: NextPage = () => {
           <br/>
           へ
           <br/>
-          <VFXSpan>ようこそ！</VFXSpan>
+          <VFXSpan shader=''>ようこそ！</VFXSpan>
         </h1>
 
         <p className={styles.description}>
@@ -40,7 +40,9 @@ const Home: NextPage = () => {
           なんか機能を追加したら導線をトップページに追加するのもOKです。
         </p>
 
-        <h2 className={styles.subtitle}>contributors</h2>
+        <h2 className={styles.subtitle}>
+          <VFXSpan>contributors</VFXSpan>
+        </h2>
 
         <p>
           <ul className={styles.list}>
