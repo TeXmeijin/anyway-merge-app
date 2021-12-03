@@ -1,11 +1,12 @@
 import styles from "./styles.module.css";
+import ContributerHeading from '../../../components/atoms/contributer-heading/index';
 
 function Meijin() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.content__inner}>
-          <h1>meijin</h1>
+          <ContributerHeading>meijin</ContributerHeading>
           <p>株式会社NoSchool CTO</p>
           <p>本企画の主催です</p>
           <p>

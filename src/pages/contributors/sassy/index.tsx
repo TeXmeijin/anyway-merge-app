@@ -1,11 +1,12 @@
 import styles from "./styles.module.css";
+import ContributerHeading from '../../../components/atoms/contributer-heading/index';
 
 function Sassy() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.content__inner}>
-          <h1>sassy</h1>
+          <ContributerHeading>sassy</ContributerHeading>
           <p>株式会社カケハシ エンジニア</p>
           <p>フロントエンドエンジニア兼バックエンドエンジニア</p>
           <p>
