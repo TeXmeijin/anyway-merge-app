@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { contributors } from "../constants";
 import { VFXSpan, VFXImg } from "react-vfx";
-import { useRealtimeCursor } from "../libs/realtime-cursor";
+import { useRealtimeCursor, RealtimeCursors } from "../libs/realtime-cursor";
 
 const Home: NextPage = () => {
   const [ref, pointers] = useRealtimeCursor();
@@ -75,19 +75,7 @@ const Home: NextPage = () => {
           </span>
         </a>
       </footer>
-      {Object.entries(pointers).map(([id, { x, y, color }]) => (
-        <div
-          key={id}
-          style={{
-            position: "absolute",
-            left: x,
-            top: y,
-            color,
-          }}
-        >
-          ●
-        </div>
-      ))}
+      <RealtimeCursors pointers={pointers} />
     </div>
   );
 };

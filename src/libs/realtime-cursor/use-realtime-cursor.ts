@@ -39,7 +39,7 @@ const useChannel = (
 };
 
 type Position = { x: number; y: number };
-type Pointers = { [k: string]: Position & { color: string } };
+export type Pointers = { [k: string]: Position & { color: string } };
 
 export const useRealtimeCursor = (): [RefObject<HTMLDivElement>, Pointers] => {
   const [points, setPoints] = useState<Pointers>({});
