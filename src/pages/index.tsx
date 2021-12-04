@@ -5,8 +5,11 @@ import Link from "next/link";
 import { contributors } from "../constants";
 import { VFXSpan, VFXImg } from "react-vfx";
 import Navbar from "../components/atoms/navbar";
+import { useRealtimeCursor, RealtimeCursors } from "../libs/realtime-cursor";
 
 const Home: NextPage = () => {
+  const [ref, pointers] = useRealtimeCursor();
+
   return (
     <>
       <Head>
@@ -20,7 +23,7 @@ const Home: NextPage = () => {
 
       <Navbar />
 
-      <div className={styles.container}>
+      <div className={styles.container} ref={ref}>
         <main className={styles.main}>
           <h1 className={styles.title}>
             <a href="https://qiita.com/advent-calendar/2021/full-scratch-awesome-app-nextjs">
@@ -75,6 +78,7 @@ const Home: NextPage = () => {
             </span>
           </a>
         </footer>
+        <RealtimeCursors pointers={pointers} />
       </div>
     </>
   );
