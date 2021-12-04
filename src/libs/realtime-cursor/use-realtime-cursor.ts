@@ -12,7 +12,7 @@ import useMouse from "@react-hook/mouse-position";
 
 const ably = process.env.ABLY_IS_ACTIVE
   ? new Realtime.Promise({
-      authUrl: process.env.ABLY_API_ENDPOINT,
+      authUrl: "/api/ably-create-token",
     })
   : null;
 
