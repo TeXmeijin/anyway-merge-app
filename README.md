@@ -3,9 +3,6 @@
 - ブランチを適当に切って作業し、Pull Request を出してください
   - Fork したリポジトリからの Pull Request で OK です
 - 私は Draft ではない Pull Request を見たら脳死でマージしてしまうので、作成途中で Pull Request を作る方は Draft にしてください
-  - 自動でマージしたかったのですが設定する時間がなく、今のところできてません。毎日見るようにします
-  - 途中でどなたかが CI 等の GitHub Actions を設定していただいた場合、この限りではなくなる可能性があります
-    - 言い換えると、この自動マージフロー自体へのカイゼン PR もお待ちしております
   - もしリポジトリに 2 日以上音沙汰なければ https://twitter.com/Meijin_garden までご連絡ください
 
 ## セットアップ手順
@@ -50,7 +47,7 @@ Firebase 等の PaaS を接続する実装をしてセットアップ手順を R
 
 ## ToDo
 
-- 脳死マージの自動化
+- ~~脳死マージの自動化~~ [#10](https://github.com/TeXmeijin/anyway-merge-app/pull/10)
 
 ## 企画者
 
