@@ -3,12 +3,15 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
-import { contributors } from '../constants';
-import { VFXSpan, VFXImg } from 'react-vfx';
+import { contributors } from "../constants";
+import { VFXSpan, VFXImg } from "react-vfx";
+import { useRealtimeCursor } from "../libs/realtime-cursor";
 
 const Home: NextPage = () => {
+  const [ref, pointers] = useRealtimeCursor();
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={ref}>
       <Head>
         <title>毎日誰かのプルリクを脳死でマージするアドベントカレンダー</title>
         <meta
@@ -23,10 +26,10 @@ const Home: NextPage = () => {
           <a href="https://qiita.com/advent-calendar/2021/full-scratch-awesome-app-nextjs">
             毎日誰かのプルリクを脳死でマージするアドベントカレンダー
           </a>
-          <br/>
+          <br />
           へ
-          <br/>
-          <VFXSpan shader=''>ようこそ！</VFXSpan>
+          <br />
+          <VFXSpan shader="">ようこそ！</VFXSpan>
         </h1>
 
         <p className={styles.description}>
@@ -44,7 +47,7 @@ const Home: NextPage = () => {
           <VFXSpan>contributors</VFXSpan>
         </h2>
 
-        <p>
+        <div>
           <ul className={styles.list}>
             {contributors.map((member) => (
               <li key={member} className={styles.listitem}>
@@ -52,7 +55,7 @@ const Home: NextPage = () => {
               </li>
             ))}
           </ul>
-        </p>
+        </div>
       </main>
 
       <footer className={styles.footer}>
@@ -63,10 +66,28 @@ const Home: NextPage = () => {
         >
           Powered by{" "}
           <span className={styles.logo}>
-            <VFXImg src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            <VFXImg
+              src="/vercel.svg"
+              alt="Vercel Logo"
+              width={72}
+              height={16}
+            />
           </span>
         </a>
       </footer>
+      {Object.entries(pointers).map(([id, { x, y, color }]) => (
+        <div
+          key={id}
+          style={{
+            position: "absolute",
+            left: x,
+            top: y,
+            color,
+          }}
+        >
+          ●
+        </div>
+      ))}
     </div>
   );
 };
