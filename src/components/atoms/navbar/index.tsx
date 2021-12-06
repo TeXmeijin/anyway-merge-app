@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import styles from "./styles.module.css";
 import { login, logout } from "~/features/userSlice";
 import { useAppDispatch } from "~/hooks/useRTK";

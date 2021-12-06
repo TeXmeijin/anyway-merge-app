@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { signIn, useSession } from "next-auth/react";
+import { useEffect } from "react";
 
 const Auth: React.FC = ({ children }) => {
   const { data: session, status } = useSession();

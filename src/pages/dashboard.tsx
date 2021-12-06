@@ -1,5 +1,5 @@
-import type { NextPage } from "next";
 import Head from "next/head";
+import type { NextPage } from "next";
 import Navbar from "~/components/atoms/navbar";
 import Auth from "~/components/Auth";
 
