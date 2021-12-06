@@ -11,5 +11,22 @@ module.exports = {
       },
     ],
     "unused-imports/no-unused-imports": "error",
+    "import/order": [
+      "error",
+      {
+        groups: [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling"],
+          "object",
+          "type",
+          "index",
+        ],
+        "newlines-between": "never",
+        pathGroupsExcludedImportTypes: ["builtin"],
+        alphabetize: { order: "asc", caseInsensitive: true },
+      },
+    ],
   },
 };
