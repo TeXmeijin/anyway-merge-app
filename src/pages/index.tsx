@@ -4,6 +4,7 @@ import { VFXSpan, VFXImg } from "react-vfx";
 import type { NextPage } from "next";
 import Navbar from "~/components/atoms/navbar";
 import { contributors } from "~/data";
+import { pagesPath } from "~/libs/$path";
 import { useRealtimeCursor, RealtimeCursors } from "~/libs/realtime-cursor";
 import styles from "~/styles/Home.module.css";
 
@@ -54,7 +55,7 @@ const Home: NextPage = () => {
             <ul className={styles.list}>
               {contributors.map((member) => (
                 <li key={member.slug} className={styles.listitem}>
-                  <Link href={`/contributors/${member.slug}`}>
+                  <Link href={pagesPath.contributors._slug(member.slug).$url()}>
                     <a>{member.name}</a>
                   </Link>
                 </li>
