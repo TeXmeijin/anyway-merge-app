@@ -9,6 +9,7 @@
     "lint-staged": "lint-staged",
     "lint:prettier": "prettier --check src",
     "fix:prettier": "prettier -w src",
+    "lint:type": "bash -c tsc --noEmit",
     "prepare": "husky install"
   },
   "husky": {
@@ -19,7 +20,8 @@
   "lint-staged": {
     "src/**/*.{js,ts,jsx,tsx}": [
       "eslint --fix",
-      "yarn fix:prettier"
+      "yarn fix:prettier",
+      "yarn lint:type"
     ]
   },
   "dependencies": {
