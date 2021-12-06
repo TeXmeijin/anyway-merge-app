@@ -8,7 +8,8 @@
     "lint": "next lint",
     "lint-staged": "lint-staged",
     "lint:prettier": "prettier --check src",
-    "fix:prettier": "prettier -w src"
+    "fix:prettier": "prettier -w src",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
@@ -17,7 +18,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,ts,jsx,tsx}": [
-      "yarn lint:prettier"
+      "eslint --fix",
+      "yarn fix:prettier"
     ]
   },
   "dependencies": {
