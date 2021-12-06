@@ -1,5 +1,5 @@
-import styles from './styles.module.css';
-import ContributerHeading from '../../../components/atoms/contributer-heading/index';
+import styles from "./styles.module.css";
+import ContributerHeading from "~/components/atoms/contributer-heading/index";
 
 function Yujiro() {
   return (
@@ -19,7 +19,7 @@ function Yujiro() {
             >
               Twitter
             </a>
-            ,{' '}
+            ,{" "}
             <a
               target="_blank"
               rel="noreferer noreferrer"
@@ -29,7 +29,7 @@ function Yujiro() {
             </a>
           </p>
           <h2>お知らせ</h2>
-          <p style={{ fontSize: '2em' }}>
+          <p style={{ fontSize: "2em" }}>
             <a
               target="_blank"
               rel="noreferer noreferrer"

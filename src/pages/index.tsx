@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styles from "~/styles/Home.module.css";
 import Link from "next/link";
-import { contributors } from "../constants";
+import { contributors } from "~/constants";
 import { VFXSpan, VFXImg } from "react-vfx";
-import Navbar from "../components/atoms/navbar";
-import { useRealtimeCursor, RealtimeCursors } from "../libs/realtime-cursor";
+import Navbar from "~/components/atoms/navbar";
+import { useRealtimeCursor, RealtimeCursors } from "~/libs/realtime-cursor";
 
 const Home: NextPage = () => {
   const [ref, pointers] = useRealtimeCursor();

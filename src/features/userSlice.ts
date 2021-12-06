@@ -1,25 +1,25 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../app/store';
-import { UserType } from '../types/UserType';
+import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "~/app/store";
+import { UserType } from "~/types/UserType";
 
 type InitialStateType = {
-  user: UserType
-}
+  user: UserType;
+};
 
-const initialState:InitialStateType = {
-  user: { displayName: "" }
-}
+const initialState: InitialStateType = {
+  user: { displayName: "" },
+};
 
 export const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState,
   reducers: {
     login: (state, action) => {
-      state.user.displayName = action.payload.displayName
+      state.user.displayName = action.payload.displayName;
     },
     logout: (state) => {
-      state.user = initialState.user
-    }
+      state.user = initialState.user;
+    },
   },
 });
 

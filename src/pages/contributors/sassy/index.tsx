@@ -1,5 +1,5 @@
 import styles from "./styles.module.css";
-import ContributerHeading from '../../../components/atoms/contributer-heading/index';
+import ContributerHeading from "~/components/atoms/contributer-heading/index";
 
 function Sassy() {
   return (
@@ -17,7 +17,7 @@ function Sassy() {
             >
               Twitter
             </a>
-            </p>
+          </p>
         </div>
       </div>
     </div>
