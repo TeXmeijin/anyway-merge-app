@@ -13,6 +13,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     dispatchReduxStore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status]);
 
   const dispatchReduxStore = () => {
