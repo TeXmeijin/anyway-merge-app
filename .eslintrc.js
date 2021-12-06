@@ -4,6 +4,7 @@ module.exports = {
   plugins: ["unused-imports"],
   rules: {
     "@next/next/no-img-element": "off",
+    "no-unused-vars": "error",
     "unused-imports/no-unused-imports": "error",
   },
 };
