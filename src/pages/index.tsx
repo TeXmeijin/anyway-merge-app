@@ -65,6 +65,21 @@ const Home: NextPage = () => {
               ))}
             </ul>
           </div>
+
+          <h2 className={styles.subtitle}>
+            <VFXSpan>contents</VFXSpan>
+            <ul className={styles.list}>
+              {/*
+              It might be better to have this list dynamically expanded.
+              However, it depends on how this app would be developed.
+              */}
+              <li className={styles.listitem}>
+                <Link href={pagesPath.sandbox.spinner.$url()}>
+                  <a>Spinner!</a>
+                </Link>
+              </li>
+            </ul>
+          </h2>
         </main>
 
         <footer className={styles.footer}>
