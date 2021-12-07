@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "run-p dev:*",
-    "dev:next": "next dev",
+    "dev:next": "NODE_OPTIONS='--inspect' next dev",
     "dev:path": "pathpida --ignorePath .gitignore --watch --output src/libs",
     "build": "pathpida --ignorePath .gitignore && next build",
     "start": "next start",
