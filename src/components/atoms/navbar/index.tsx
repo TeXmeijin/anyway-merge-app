@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { signIn, signOut, useSession } from 'next-auth/react';
-import styles from './styles.module.css';
-import { login, logout } from '../../../features/userSlice';
-import { useAppDispatch } from '../../../hooks/useRTK';
+import { signIn, signOut, useSession } from "next-auth/react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import styles from "./styles.module.css";
+import { login, logout } from "~/features/userSlice";
+import { useAppDispatch } from "~/hooks/useRTK";
 
 const Navbar: React.FC = () => {
   const { data: session, status } = useSession();
@@ -13,10 +13,11 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     dispatchReduxStore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status]);
 
   const dispatchReduxStore = () => {
-    if (status === 'authenticated') {
+    if (status === "authenticated") {
       dispatch(login({ displayName: session?.user.name }));
     } else {
       dispatch(logout());
@@ -30,16 +31,16 @@ const Navbar: React.FC = () => {
           <a>サイトロゴ</a>
         </Link>
       </div>
-      {status === 'authenticated' && (
+      {status === "authenticated" && (
         <div>
-          ログイン中：{session?.user.name}さん{' '}
-          <button onClick={() => router.push('/dashboard')}>
+          ログイン中：{session?.user.name}さん{" "}
+          <button onClick={() => router.push("/dashboard")}>
             ユーザー専用ページ
-          </button>{' '}
+          </button>{" "}
           <button onClick={() => signOut()}>ログアウト</button>
         </div>
       )}
-      {status === 'unauthenticated' && (
+      {status === "unauthenticated" && (
         <div>
           未ログイン <button onClick={() => signIn()}>ログイン</button>
         </div>
