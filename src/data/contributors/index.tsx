@@ -1,4 +1,4 @@
-import { Meijin } from "./components";
+import { Kshibayama, Meijin } from "./components";
 import { Contributor } from "~/types";
 
 export const contributors: Contributor[] = [
@@ -95,5 +95,17 @@ export const contributors: Contributor[] = [
         url: "https://yokinist.me/",
       },
     ],
+  },
+  {
+    name: "kshibayama",
+    slug: "kshibayama",
+    description: "フロントエンドエンジニア@SheepMedical Co., Ltd.",
+    links: [
+      {
+        name: "Twitter",
+        url: "https://twitter.com/kshibayama",
+      },
+    ],
+    additionalSection: <Kshibayama />,
   },
 ];

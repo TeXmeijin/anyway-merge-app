@@ -37,7 +37,10 @@ const Home: NextPage = () => {
           </h1>
 
           <p className={styles.description}>
-            詳しい説明は<code className={styles.code}>README.md</code>
+            詳しい説明は
+            <a href="https://github.com/TeXmeijin/anyway-merge-app/blob/main/README.md">
+              <code className={styles.code}>README.md</code>
+            </a>
             をご覧ください。
           </p>
           <p className={styles.description}>
