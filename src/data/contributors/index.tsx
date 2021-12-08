@@ -96,4 +96,20 @@ export const contributors: Contributor[] = [
       },
     ],
   },
+  {
+    name: "kanoi",
+    slug: "kanoi",
+    description:
+      "カノイです。\nサイトに雪を降らせました～！\n右下の雪だるま君でONとOFFが出来るので、してみてください～",
+    links: [
+      {
+        name: "Twitter",
+        url: "https://twitter.com/kanoi_y",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/kanoi-y",
+      },
+    ],
+  },
 ];
