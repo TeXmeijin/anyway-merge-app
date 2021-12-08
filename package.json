@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "run-p dev:*",
-    "dev:next": "next dev",
+    "dev:next": "NODE_OPTIONS='--inspect' next dev",
     "dev:path": "pathpida --ignorePath .gitignore --watch --output src/libs",
     "build": "pathpida --ignorePath .gitignore && next build",
     "start": "next start",
@@ -29,7 +29,11 @@
   "dependencies": {
     "@react-hook/mouse-position": "^4.1.3",
     "@reduxjs/toolkit": "^1.6.2",
+    "@types/styletron-engine-atomic": "^1.1.1",
+    "@types/styletron-react": "^5.0.3",
+    "@types/styletron-standard": "^2.0.2",
     "ably": "1.2.5-beta.1",
+    "baseui": "^10.6.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
     "next": "12.0.4",
@@ -38,7 +42,9 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-redux": "^7.2.6",
-    "react-vfx": "^0.5.0"
+    "react-vfx": "^0.5.0",
+    "styletron-engine-atomic": "^1.4.8",
+    "styletron-react": "^6.0.2"
   },
   "devDependencies": {
     "@types/node": "16.11.10",
@@ -47,6 +53,7 @@
     "eslint": "7",
     "eslint-config-next": "12.0.4",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-baseui": "^10.6.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-unused-imports": "^2.0.0",
     "npm-run-all": "^4.1.5",
