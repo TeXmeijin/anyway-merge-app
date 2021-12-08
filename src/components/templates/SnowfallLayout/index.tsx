@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ReactNode, useState } from "react";
 import Snowfall from "react-snowfall";
-// import styles from "./styles.module.css";
+import styles from "./styles.module.css";
 
 type Props = {
   children: ReactNode;
@@ -17,18 +17,9 @@ const SnowfallLayout = (props: Props) => {
   };
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+    <div className={styles.container}>
       {isFalling && <Snowfall />}
-      <div
-        style={{
-          width: "70px",
-          position: "absolute",
-          bottom: "10px",
-          right: "10px",
-          cursor: "pointer",
-        }}
-        onClick={handleChangeFallingButton}
-      >
+      <div className={styles.imageWrapper} onClick={handleChangeFallingButton}>
         {isFalling ? (
           <Image
             src="/images/snowman_yukidaruma_man.png"
@@ -39,7 +30,7 @@ const SnowfallLayout = (props: Props) => {
         ) : (
           <Image
             src="/images/snowman_yukidaruma_tokeru.png"
-            alt="雪だるま"
+            alt="とけた雪だるま"
             width="683"
             height="683"
           />
