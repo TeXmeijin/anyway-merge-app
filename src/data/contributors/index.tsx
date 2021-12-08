@@ -108,4 +108,20 @@ export const contributors: Contributor[] = [
     ],
     additionalSection: <Kshibayama />,
   },
+  {
+    name: "tomon9086",
+    slug: "tomon9086",
+    description:
+      "このプロフィールページにGitHubのアイコンを表示する機能を追加しました\n最近はFlutterとかも触っています\n\nよかったらお友達になってください🙇🙇🙇",
+    links: [
+      {
+        name: "Twitter",
+        url: "https://twitter.com/tomon9086",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/tomon9086",
+      },
+    ],
+  },
 ];
