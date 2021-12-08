@@ -11,8 +11,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     <SessionProvider session={pageProps.session}>
       <VFXProvider>
         <Provider store={store}>
-          <Snowfall />
-          <Component {...pageProps} />
+          <div style={{ position: "relative", width: "100%", height: "100%" }}>
+            <Snowfall />
+            <Component {...pageProps} />
+          </div>
         </Provider>
       </VFXProvider>
     </SessionProvider>
