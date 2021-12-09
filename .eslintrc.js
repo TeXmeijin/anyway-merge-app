@@ -1,7 +1,7 @@
 /** @type {import('eslint-config-next')*/
 module.exports = {
   extends: ["next", "next/core-web-vitals", "prettier"],
-  plugins: ["unused-imports"],
+  plugins: ["unused-imports", "baseui"],
   rules: {
     "@next/next/no-img-element": "off",
     "no-unused-vars": [
@@ -28,5 +28,8 @@ module.exports = {
         alphabetize: { order: "asc", caseInsensitive: true },
       },
     ],
+    'baseui/deprecated-theme-api': "warn",
+    'baseui/deprecated-component-api': "warn",
+    'baseui/no-deep-imports': "warn",
   },
 };

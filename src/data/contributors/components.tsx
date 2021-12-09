@@ -22,3 +22,32 @@ export const Meijin: React.VFC = () => (
     </div>
   </>
 );
+
+export const Kshibayama: React.VFC = () => (
+  <>
+    <h3>告知</h3>
+    <div>
+      <p>
+        こんにちは！
+        <br />
+        <a href="https://www.sheepmedical.com/">SheepMedical </a>
+        という健康福祉・未病分野を事業領域とする会社で、
+        フロントエンドエンジニアとして働いている者です。
+      </p>
+    </div>
+
+    <div>
+      <p>
+        会社として全方位積極採用中(エンジニアも、プロダクトも、ビジネスも、ドクターも！)ですので、興味ある方は下記採用サイトをご覧ください！
+        <ul>
+          <li>
+            See:{" "}
+            <a href="https://recruit.sheepmedical.com/">
+              https://recruit.sheepmedical.com/
+            </a>
+          </li>
+        </ul>
+      </p>
+    </div>
+  </>
+);

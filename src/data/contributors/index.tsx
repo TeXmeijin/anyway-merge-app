@@ -1,4 +1,4 @@
-import { Meijin } from "./components";
+import { Kshibayama, Meijin } from "./components";
 import { Contributor } from "~/types";
 
 export const contributors: Contributor[] = [
@@ -93,6 +93,34 @@ export const contributors: Contributor[] = [
       {
         name: "yokinist.me",
         url: "https://yokinist.me/",
+      },
+    ],
+  },
+  {
+    name: "kshibayama",
+    slug: "kshibayama",
+    description: "フロントエンドエンジニア@SheepMedical Co., Ltd.",
+    links: [
+      {
+        name: "Twitter",
+        url: "https://twitter.com/kshibayama",
+      },
+    ],
+    additionalSection: <Kshibayama />,
+  },
+  {
+    name: "tomon9086",
+    slug: "tomon9086",
+    description:
+      "このプロフィールページにGitHubのアイコンを表示する機能を追加しました\n最近はFlutterとかも触っています\n\nよかったらお友達になってください🙇🙇🙇",
+    links: [
+      {
+        name: "Twitter",
+        url: "https://twitter.com/tomon9086",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/tomon9086",
       },
     ],
   },
