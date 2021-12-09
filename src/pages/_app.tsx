@@ -1,5 +1,5 @@
 import "~/styles/globals.css";
-import { LightTheme, BaseProvider } from "baseui";
+import { BaseProvider, LightTheme } from "baseui";
 import { SessionProvider } from "next-auth/react";
 import { Provider } from "react-redux";
 import { VFXProvider } from "react-vfx";
@@ -7,6 +7,7 @@ import { Provider as StyletronProvider } from "styletron-react";
 import { styletron } from "../styletron";
 import type { AppProps } from "next/app";
 import { store } from "~/app/store";
+import SnowfallLayout from "~/components/templates/SnowfallLayout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -15,7 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Provider store={store}>
           <StyletronProvider value={styletron}>
             <BaseProvider theme={LightTheme}>
-              <Component {...pageProps} />
+              <SnowfallLayout>
+                <Component {...pageProps} />
+              </SnowfallLayout>
             </BaseProvider>
           </StyletronProvider>
         </Provider>
