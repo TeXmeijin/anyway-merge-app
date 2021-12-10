@@ -140,4 +140,20 @@ export const contributors: Contributor[] = [
       },
     ],
   },
+  {
+    name: "tossy_yukky",
+    slug: "tossy_yukky",
+    description:
+      "ゲームやってるか本読んでるか、もしくはたまにエンジにゃリング。",
+    links: [
+      {
+        name: "Twitter",
+        url: "https://twitter.com/tossy_yukky",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/tossyyukky",
+      },
+    ],
+  },
 ];

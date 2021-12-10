@@ -3,6 +3,7 @@ import Link from "next/link";
 import { VFXSpan, VFXImg } from "react-vfx";
 import type { NextPage } from "next";
 import Navbar from "~/components/atoms/navbar";
+import ReactConfMovie from "~/components/atoms/react-conf-movie";
 import { contributors } from "~/data";
 import { pagesPath } from "~/libs/$path";
 import { useRealtimeCursor, RealtimeCursors } from "~/libs/realtime-cursor";
@@ -49,6 +50,8 @@ const Home: NextPage = () => {
           <p className={styles.description}>
             なんか機能を追加したら導線をトップページに追加するのもOKです。
           </p>
+
+          <ReactConfMovie />
 
           <h2 className={styles.subtitle}>
             <VFXSpan>contributors</VFXSpan>
