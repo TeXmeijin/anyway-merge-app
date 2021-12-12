@@ -1,0 +1,17 @@
+.door {
+  position: absolute;
+  top: 60px;
+  right: 100px;
+}
+
+.tree {
+  position: absolute;
+  top: 60px;
+  left: 500px;
+}
+
+.santa {
+  position: absolute;
+  top: 60px;
+  left: 100px;
+}

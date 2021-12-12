@@ -4,12 +4,13 @@ import { VFXSpan, VFXImg } from "react-vfx";
 import type { NextPage } from "next";
 import Navbar from "~/components/atoms/navbar";
 import ReactConfMovie from "~/components/atoms/react-conf-movie";
+import { getChristmasLayout } from "~/components/templates/ChristmasLayout";
 import { contributors } from "~/data";
 import { pagesPath } from "~/libs/$path";
 import { useRealtimeCursor, RealtimeCursors } from "~/libs/realtime-cursor";
 import styles from "~/styles/Home.module.css";
 
-const Home: NextPage = () => {
+const Home: WithLayout<NextPage> = () => {
   const [ref, pointers] = useRealtimeCursor();
 
   return (
@@ -107,5 +108,7 @@ const Home: NextPage = () => {
     </>
   );
 };
+
+Home.layout = getChristmasLayout();
 
 export default Home;
