@@ -9,7 +9,14 @@ import type { AppProps } from "next/app";
 import { store } from "~/app/store";
 import SnowfallLayout from "~/components/templates/SnowfallLayout";
 
-function MyApp({ Component, pageProps }: AppProps) {
+type Props = AppProps & {
+  Component: {
+    layout?: Layout;
+  };
+};
+
+function MyApp({ Component, pageProps }: Props) {
+  const { layout = (page) => page } = Component;
   return (
     <SessionProvider session={pageProps.session}>
       <VFXProvider>
@@ -17,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <StyletronProvider value={styletron}>
             <BaseProvider theme={LightTheme}>
               <SnowfallLayout>
-                <Component {...pageProps} />
+                {layout(<Component {...pageProps} />)}
               </SnowfallLayout>
             </BaseProvider>
           </StyletronProvider>
