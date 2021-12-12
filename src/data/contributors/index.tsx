@@ -156,4 +156,19 @@ export const contributors: Contributor[] = [
       },
     ],
   },
+  {
+    name: "Hikaru Kobori",
+    slug: "anneau",
+    description: "株式会社エイチーム引越し侍でWebエンジニアやってます！",
+    links: [
+      {
+        name: "Twitter",
+        url: "https://twitter.com/______kobo",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/anneau",
+      },
+    ],
+  },
 ];
