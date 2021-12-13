@@ -175,7 +175,7 @@ export const contributors: Contributor[] = [
     name: "ウラル",
     slug: "namosuke",
     description:
-      "ウラルちゃんって呼んでください！\nWebサービス作るのが趣味の大学生です！",
+      "Webサービス作るのが趣味の大学生。\nウラルちゃんって呼んでください！",
     links: [
       {
         name: "Twitter",

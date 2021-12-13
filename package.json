@@ -11,7 +11,7 @@
     "lint-staged": "lint-staged",
     "lint:prettier": "prettier --check src",
     "fix:prettier": "prettier -w src",
-    "lint:type": "bash -c tsc --noEmit",
+    "lint:type": "npx tsc --noEmit",
     "prepare": "husky install"
   },
   "husky": {
