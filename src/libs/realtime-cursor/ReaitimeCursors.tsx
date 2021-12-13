@@ -1,11 +1,9 @@
 import { VFC } from "react";
-import { Pointers } from "./use-realtime-cursor";
+import { useRealtimeCursor } from "./use-realtime-cursor";
 
-type Props = {
-  pointers: Pointers;
-};
+export const RealtimeCursors: VFC = () => {
+  const [pointers, mouse] = useRealtimeCursor();
 
-export const RealtimeCursors: VFC<Props> = ({ pointers }) => {
   return (
     <>
       {Object.entries(pointers).map(([id, { x, y, color }]) => (
@@ -21,6 +19,18 @@ export const RealtimeCursors: VFC<Props> = ({ pointers }) => {
           ●
         </div>
       ))}
+      {!!mouse.pageX && !!mouse.pageY && (
+        <div
+          style={{
+            position: "absolute",
+            left: mouse.pageX,
+            top: mouse.pageY,
+            color: "red",
+          }}
+        >
+          ●
+        </div>
+      )}
     </>
   );
 };
