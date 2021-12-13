@@ -14,9 +14,10 @@ export const RealtimeCursors: VFC = () => {
             left: x,
             top: y,
             color,
+            pointerEvents: "none",
           }}
         >
-          ●
+          ❄
         </div>
       ))}
       {!!mouse.pageX && !!mouse.pageY && (
@@ -25,10 +26,11 @@ export const RealtimeCursors: VFC = () => {
             position: "absolute",
             left: mouse.pageX,
             top: mouse.pageY,
-            color: "red",
+            color: "skyblue",
+            pointerEvents: "none",
           }}
         >
-          ●
+          ❄
         </div>
       )}
     </>
