@@ -22,7 +22,8 @@
   "lint-staged": {
     "src/**/*.{js,ts,jsx,tsx}": [
       "eslint --fix",
-      "yarn fix:prettier"
+      "yarn fix:prettier",
+      "lint:type"
     ]
   },
   "dependencies": {
