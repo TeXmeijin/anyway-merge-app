@@ -1,14 +1,7 @@
-import { Realtime } from "ably/promises";
+import useMouse, { MousePosition } from "@react-hook/mouse-position";
 import { Types } from "ably/ably";
-import {
-  RefObject,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
-import useMouse from "@react-hook/mouse-position";
+import { Realtime } from "ably/promises";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 const ably = process.env.ABLY_IS_ACTIVE
   ? new Realtime.Promise({
@@ -18,7 +11,7 @@ const ably = process.env.ABLY_IS_ACTIVE
 
 const useChannel = (
   channelName: string,
-  callbackOnMessage: (msg: Types.Message) => void
+  callbackOnMessage: (_msg: Types.Message) => void
 ): [Types.RealtimeChannelPromise | null] => {
   const channel = useMemo(
     () => (ably ? ably.channels.get(channelName) : null),
@@ -41,7 +34,7 @@ const useChannel = (
 type Position = { x: number; y: number };
 export type Pointers = { [k: string]: Position & { color: string } };
 
-export const useRealtimeCursor = (): [RefObject<HTMLDivElement>, Pointers] => {
+export const useRealtimeCursor = (): [Pointers, MousePosition] => {
   const [points, setPoints] = useState<Pointers>({});
 
   const handler = useCallback(({ connectionId, data }: Types.Message) => {
@@ -58,12 +51,16 @@ export const useRealtimeCursor = (): [RefObject<HTMLDivElement>, Pointers] => {
   }, []);
   const [channel] = useChannel("realtime-cursor", handler);
 
-  const ref = useRef<HTMLDivElement>(null);
+  const [body, setBody] = useState<HTMLBodyElement | null>(null);
+  useEffect(() => {
+    const body = document.querySelector("body");
+    setBody(body);
+  }, []);
 
-  const mouse = useMouse(ref, {
-    enterDelay: 1000,
+  const mouse = useMouse(body, {
+    enterDelay: 100,
     leaveDelay: 100,
-    fps: 5,
+    fps: 8,
   });
   useEffect(() => {
     const { pageX, pageY } = mouse;
@@ -77,7 +74,13 @@ export const useRealtimeCursor = (): [RefObject<HTMLDivElement>, Pointers] => {
       });
   }, [channel, mouse]);
 
-  return [ref, points];
+  const myPointer = useMouse(body, {
+    enterDelay: 100,
+    leaveDelay: 100,
+    fps: 32,
+  });
+
+  return [points, myPointer];
 };
 
 const stringToColor = (str: string): string => {

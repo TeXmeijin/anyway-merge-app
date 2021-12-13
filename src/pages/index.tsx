@@ -7,12 +7,10 @@ import ReactConfMovie from "~/components/atoms/react-conf-movie";
 import { getChristmasLayout } from "~/components/templates/ChristmasLayout";
 import { contributors } from "~/data";
 import { pagesPath } from "~/libs/$path";
-import { useRealtimeCursor, RealtimeCursors } from "~/libs/realtime-cursor";
+import { RealtimeCursors } from "~/libs/realtime-cursor";
 import styles from "~/styles/Home.module.css";
 
 const Home: WithLayout<NextPage> = () => {
-  const [ref, pointers] = useRealtimeCursor();
-
   return (
     <>
       <Head>
@@ -26,7 +24,7 @@ const Home: WithLayout<NextPage> = () => {
 
       <Navbar />
 
-      <div className={styles.container} ref={ref}>
+      <div className={styles.container}>
         <main className={styles.main}>
           <h1 className={styles.title}>
             <a href="https://qiita.com/advent-calendar/2021/full-scratch-awesome-app-nextjs">
@@ -103,7 +101,7 @@ const Home: WithLayout<NextPage> = () => {
             </span>
           </a>
         </footer>
-        <RealtimeCursors pointers={pointers} />
+        <RealtimeCursors />
       </div>
     </>
   );
