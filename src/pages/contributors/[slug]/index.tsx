@@ -58,7 +58,11 @@ function ContributorPage() {
                     }
                   })()}
                 >
-                  <a target="_blank" rel="noreferer noreferrer" href={link.url}>
+                  <a
+                    target="_blank"
+                    rel="nofollow noreferrer noopener me"
+                    href={link.url}
+                  >
                     {(() => {
                       if (link.name === "Twitter") {
                         return `@${link.url.split("/").splice(-1)[0]}`;
