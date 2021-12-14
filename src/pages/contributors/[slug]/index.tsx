@@ -42,9 +42,26 @@ function ContributorPage() {
           />
           <ul>
             {(contributor.links ?? []).map((link) => (
-              <li key={link.url}>
+              <li
+                key={link.url}
+                className={(() => {
+                  if (link.name === "Twitter") {
+                    return styles.listTwitter;
+                  } else if (link.name === "GitHub") {
+                    return styles.listGitHub;
+                  }
+                })()}
+              >
                 <a target="_blank" rel="noreferer noreferrer" href={link.url}>
-                  {link.name}
+                  {(() => {
+                    if (link.name === "Twitter") {
+                      return `@${link.url.split("/").splice(-1)[0]}`;
+                    } else if (link.name === "GitHub") {
+                      return `@${link.url.split("/").splice(-1)[0]}`;
+                    } else {
+                      return link.name;
+                    }
+                  })()}
                 </a>
               </li>
             ))}

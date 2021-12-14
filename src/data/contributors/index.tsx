@@ -171,4 +171,24 @@ export const contributors: Contributor[] = [
       },
     ],
   },
+  {
+    name: "ウラル",
+    slug: "namosuke",
+    description:
+      "Webサービス作るのが趣味の大学生。\nウラルちゃんって呼んでください！",
+    links: [
+      {
+        name: "Twitter",
+        url: "https://twitter.com/barley_ural",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/namosuke",
+      },
+      {
+        name: "splamp.info",
+        url: "https://splamp.info",
+      },
+    ],
+  },
 ];

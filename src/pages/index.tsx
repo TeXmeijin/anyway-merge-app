@@ -2,10 +2,10 @@ import Head from "next/head";
 import Link from "next/link";
 import { VFXSpan, VFXImg } from "react-vfx";
 import type { NextPage } from "next";
+import ContributorsList from "~/components/atoms/contributors-list";
 import Navbar from "~/components/atoms/navbar";
 import ReactConfMovie from "~/components/atoms/react-conf-movie";
 import { getChristmasLayout } from "~/components/templates/ChristmasLayout";
-import { contributors } from "~/data";
 import { pagesPath } from "~/libs/$path";
 import { RealtimeCursors } from "~/libs/realtime-cursor";
 import styles from "~/styles/Home.module.css";
@@ -56,17 +56,7 @@ const Home: WithLayout<NextPage> = () => {
             <VFXSpan>contributors</VFXSpan>
           </h2>
 
-          <div>
-            <ul className={styles.list}>
-              {contributors.map((member) => (
-                <li key={member.slug} className={styles.listitem}>
-                  <Link href={pagesPath.contributors._slug(member.slug).$url()}>
-                    <a>{member.name}</a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ContributorsList />
 
           <h2 className={styles.subtitle}>
             <VFXSpan>contents</VFXSpan>
