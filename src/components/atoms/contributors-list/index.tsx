@@ -1,16 +1,16 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import ContributorHeading from "~/components/atoms/contributer-heading/index";
+import styles from "./styles.module.css";
 import { contributors } from "~/data";
 import { getGitHubUser } from "~/data/github";
 import { pagesPath } from "~/libs/$path";
-import styles from "~/styles/Home.module.css";
+import homeStyles from "~/styles/Home.module.css";
 import { Contributor } from "~/types";
 
 const ContributorsList = () => {
   return (
     <div>
-      <ul className={styles.list}>
+      <ul className={homeStyles.list}>
         {contributors.map((member) => (
           <ContributorsListMember key={member.toString()} member={member} />
         ))}
@@ -36,12 +36,15 @@ const ContributorsListMember = ({
       });
   }, [member?.links]);
   return (
-    <li key={member.slug} className={styles.listitem}>
+    <li key={member.slug} className={homeStyles.listitem}>
       <Link href={pagesPath.contributors._slug(member.slug).$url()}>
-        <a>
-          <ContributorHeading iconUrl={avatarUrl}>
-            {member.name}
-          </ContributorHeading>
+        <a className={styles.link}>
+          {avatarUrl ? (
+            <img src={avatarUrl} alt={member.name} className={styles.linkImg} />
+          ) : (
+            <div className={styles.linkImg} />
+          )}
+          <div className={styles.linkName}>{member.name}</div>
         </a>
       </Link>
     </li>

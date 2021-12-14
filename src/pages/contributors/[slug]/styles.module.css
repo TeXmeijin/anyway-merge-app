@@ -15,8 +15,6 @@
     6.5px 7.2px 13.7px -0.2px hsl(208deg 65% 37% / 0.39),
     15.2px 16.9px 32px -0.4px hsl(208deg 65% 37% / 0.62),
     33.9px 37.7px 71.5px -0.6px hsl(208deg 65% 37% / 0.86);
-
-  flex: 1;
 }
 
 .content__inner {
@@ -41,4 +39,19 @@
 
 .content a {
   color: #128c91;
+}
+
+.listTwitter {
+  list-style-type: none;
+  background: url(/images/twitter-circle-blue.svg) no-repeat left center;
+  margin-left: -1.5em;
+  padding-left: 1.5em;
+  background-size: 1.2em;
+}
+.listGitHub {
+  list-style-type: none;
+  background: url(/images/github-64px.png) no-repeat left center;
+  margin-left: -1.5em;
+  padding-left: 1.5em;
+  background-size: 1.2em;
 }
