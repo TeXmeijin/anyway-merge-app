@@ -36,45 +36,49 @@ function ContributorPage() {
         <div className={styles.content}>
           <div className={styles.content__inner}>
             <ContributorHeading iconUrl={avatarUrl}>
-              {contributor.name}
+              <div>
+                <h1 className={styles.heading}>{contributor.name}</h1>
+                <ul>
+                  {(contributor.links ?? []).map((link) => (
+                    <li
+                      key={link.url}
+                      className={(() => {
+                        if (link.name === "Twitter") {
+                          return styles.listTwitter;
+                        } else if (link.name === "GitHub") {
+                          return styles.listGitHub;
+                        }
+                      })()}
+                    >
+                      <a
+                        target="_blank"
+                        rel="nofollow noreferrer noopener me"
+                        href={link.url}
+                      >
+                        {(() => {
+                          if (link.name === "Twitter") {
+                            return `@${link.url.split("/").splice(-1)[0]}`;
+                          } else if (link.name === "GitHub") {
+                            return `@${link.url.split("/").splice(-1)[0]}`;
+                          } else {
+                            return link.name;
+                          }
+                        })()}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </ContributorHeading>
             <p
               dangerouslySetInnerHTML={encodeHtml(
                 convertTextToHtml(contributor?.description)
               )}
             />
-            <ul>
-              {(contributor.links ?? []).map((link) => (
-                <li
-                  key={link.url}
-                  className={(() => {
-                    if (link.name === "Twitter") {
-                      return styles.listTwitter;
-                    } else if (link.name === "GitHub") {
-                      return styles.listGitHub;
-                    }
-                  })()}
-                >
-                  <a
-                    target="_blank"
-                    rel="nofollow noreferrer noopener me"
-                    href={link.url}
-                  >
-                    {(() => {
-                      if (link.name === "Twitter") {
-                        return `@${link.url.split("/").splice(-1)[0]}`;
-                      } else if (link.name === "GitHub") {
-                        return `@${link.url.split("/").splice(-1)[0]}`;
-                      } else {
-                        return link.name;
-                      }
-                    })()}
-                  </a>
-                </li>
-              ))}
-            </ul>
             {contributor?.additionalSection && (
-              <>{contributor.additionalSection}</>
+              <div className={styles.additionalSection}>
+                {contributor.additionalSection}
+              </div>
             )}
           </div>
         </div>
