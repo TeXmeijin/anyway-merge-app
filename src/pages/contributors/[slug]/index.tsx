@@ -8,6 +8,7 @@ import { contributors } from "~/data";
 import { useContributors } from "~/hooks/useContributors";
 import { convertTextToHtml } from "~/libs/convertTextToHtml";
 import { encodeHtml } from "~/libs/encodeHtml";
+import { ContributorLink } from "~/types";
 
 function ContributorPage() {
   const {
@@ -26,6 +27,11 @@ function ContributorPage() {
 
   if (!contributor) return <ErrorPage statusCode={404} />;
 
+  const links: ContributorLink[] = [
+    { name: "Qiita", url: `https://qiita.com/${contributor.slug}` },
+    ...(contributor.links ?? []),
+  ];
+
   return (
     <>
       <Seo
@@ -39,11 +45,13 @@ function ContributorPage() {
               <div>
                 <h1 className={styles.heading}>{contributor.name}</h1>
                 <ul>
-                  {(contributor.links ?? []).map((link) => (
+                  {links.map((link) => (
                     <li
                       key={link.url}
                       className={(() => {
-                        if (link.name === "Twitter") {
+                        if (link.name === "Qiita") {
+                          return styles.listQiita;
+                        } else if (link.name === "Twitter") {
                           return styles.listTwitter;
                         } else if (link.name === "GitHub") {
                           return styles.listGitHub;
