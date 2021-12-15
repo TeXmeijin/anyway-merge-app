@@ -11,6 +11,7 @@ module.exports = {
       },
     ],
     "unused-imports/no-unused-imports": "error",
+    "react-hooks/exhaustive-deps": "off",
     "import/order": [
       "error",
       {
@@ -28,8 +29,8 @@ module.exports = {
         alphabetize: { order: "asc", caseInsensitive: true },
       },
     ],
-    'baseui/deprecated-theme-api': "warn",
-    'baseui/deprecated-component-api': "warn",
-    'baseui/no-deep-imports': "warn",
+    "baseui/deprecated-theme-api": "warn",
+    "baseui/deprecated-component-api": "warn",
+    "baseui/no-deep-imports": "warn",
   },
 };
