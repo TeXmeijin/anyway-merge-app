@@ -1,11 +1,11 @@
 import ErrorPage from "next/error";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import styles from "./styles.module.css";
 import ContributorHeading from "~/components/atoms/contributer-heading/index";
 import Seo from "~/components/Seo";
 import { contributors } from "~/data";
-import { getGitHubUser } from "~/data/github";
+import { useContributors } from "~/hooks/useContributors";
 import { convertTextToHtml } from "~/libs/convertTextToHtml";
 import { encodeHtml } from "~/libs/encodeHtml";
 
@@ -13,19 +13,16 @@ function ContributorPage() {
   const {
     query: { slug },
   } = useRouter();
-  const [avatarUrl, setAvatarUrl] = useState<string>();
-
+  const { getAvatarUrl, loadAvatarUrl } = useContributors();
   const contributor = contributors.find((c) => c.slug === slug);
+  const avatarUrl = getAvatarUrl(contributor);
 
   useEffect(() => {
-    const githubUrl = contributor?.links?.find(
-      (link) => link.name === "GitHub"
-    )?.url;
-    githubUrl &&
-      getGitHubUser({ githubUrl }).then((user) => {
-        setAvatarUrl(user.avatar_url as string);
-      });
-  }, [contributor?.links]);
+    if (!contributor) {
+      return;
+    }
+    loadAvatarUrl(contributor);
+  }, [loadAvatarUrl, contributor]);
 
   if (!contributor) return <ErrorPage statusCode={404} />;
 

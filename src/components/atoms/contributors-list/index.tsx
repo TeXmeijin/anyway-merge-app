@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import ContributorIcon from "../contributor-icon";
 import styles from "./styles.module.css";
 import { contributors } from "~/data";
-import { getGitHubUser } from "~/data/github";
 import { pagesPath } from "~/libs/$path";
 import homeStyles from "~/styles/Home.module.css";
 import { Contributor } from "~/types";
@@ -19,31 +18,16 @@ const ContributorsList = () => {
   );
 };
 
-const ContributorsListMember = ({
-  member,
-}: {
-  key: string;
-  member: Contributor;
-}) => {
-  const [avatarUrl, setAvatarUrl] = useState<string>();
-  useEffect(() => {
-    const githubUrl = member?.links?.find(
-      (link) => link.name === "GitHub"
-    )?.url;
-    githubUrl &&
-      getGitHubUser({ githubUrl }).then((user) => {
-        setAvatarUrl(user.avatar_url as string);
-      });
-  }, [member?.links]);
+const ContributorsListMember = ({ member }: { member: Contributor }) => {
   return (
     <li key={member.slug} className={homeStyles.listitem}>
       <Link href={pagesPath.contributors._slug(member.slug).$url()}>
         <a className={styles.link}>
-          {avatarUrl ? (
-            <img src={avatarUrl} alt={member.name} className={styles.linkImg} />
-          ) : (
-            <div className={styles.linkImg} />
-          )}
+          <ContributorIcon
+            contributor={member}
+            className={styles.linkImg}
+            placeholder={<div className={styles.linkImg} />}
+          />
           <div className={styles.linkName}>{member.name}</div>
         </a>
       </Link>
