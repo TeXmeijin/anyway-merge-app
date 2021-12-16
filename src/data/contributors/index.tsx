@@ -191,4 +191,24 @@ export const contributors: Contributor[] = [
       },
     ],
   },
-];
+  {
+    name: "Karukichi Soejima｜カルキチ副島",
+    slug: "karukichi-soejima",
+    description:
+      "ふろんとえんどうぇぶでべろぱー\nフロントエンドとVimが好きです。\n技術ブログ書いてます。",
+    links: [
+      {
+        name: "Twitter",
+        url: "https://twitter.com/karukichi_yah",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/Yota-K",
+      },
+      {
+        name: "カルキチのブログ",
+        url: "https://karukichi-blog.netlify.app/",
+      },
+    ],
+  },
+] as const;
