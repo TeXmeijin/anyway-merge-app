@@ -66,6 +66,8 @@ function ContributorPage() {
                         {(() => {
                           if (link.name === "Twitter") {
                             return `@${link.url.split("/").splice(-1)[0]}`;
+                          } else if (link.name === "Qiita") {
+                            return `@${link.url.split("/").splice(-1)[0]}`;
                           } else if (link.name === "GitHub") {
                             return `@${link.url.split("/").splice(-1)[0]}`;
                           } else {
