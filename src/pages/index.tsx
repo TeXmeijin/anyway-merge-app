@@ -1,10 +1,10 @@
-import Head from "next/head";
 import Link from "next/link";
 import { VFXSpan, VFXImg } from "react-vfx";
 import type { NextPage } from "next";
 import ContributorsList from "~/components/atoms/contributors-list";
 import Navbar from "~/components/atoms/navbar";
 import ReactConfMovie from "~/components/atoms/react-conf-movie";
+import Seo from "~/components/Seo";
 import { getChristmasLayout } from "~/components/templates/ChristmasLayout";
 import { pagesPath } from "~/libs/$path";
 import { RealtimeCursors } from "~/libs/realtime-cursor";
@@ -13,14 +13,10 @@ import styles from "~/styles/Home.module.css";
 const Home: WithLayout<NextPage> = () => {
   return (
     <>
-      <Head>
-        <title>毎日誰かのプルリクを脳死でマージするアドベントカレンダー</title>
-        <meta
-          name="description"
-          content="初日に私が空っぽのNext.jsプロジェクトを作って公開しておくので、25日間毎日誰かがPull Request出して脳死でマージしていき、12月25日に何ができているでしょう？アドベントカレンダーです。"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Seo
+        title="毎日誰かのプルリクを脳死でマージするアドベントカレンダー"
+        description="初日に私が空っぽのNext.jsプロジェクトを作って公開しておくので、25日間毎日誰かがPull Request出して脳死でマージしていき、12月25日に何ができているでしょう？アドベントカレンダーです。"
+      />
 
       <Navbar />
 
