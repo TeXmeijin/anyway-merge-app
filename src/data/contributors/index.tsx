@@ -211,4 +211,4 @@ export const contributors: Contributor[] = [
       },
     ],
   },
-] as const;
+];
