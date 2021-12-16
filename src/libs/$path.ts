@@ -10,6 +10,9 @@ export const pagesPath = {
     $url: (url?: { hash?: string }) => ({ pathname: '/dashboard' as const, hash: url?.hash })
   },
   sandbox: {
+    particles_animation: {
+      $url: (url?: { hash?: string }) => ({ pathname: '/sandbox/particles-animation' as const, hash: url?.hash })
+    },
     spinner: {
       $url: (url?: { hash?: string }) => ({ pathname: '/sandbox/spinner' as const, hash: url?.hash })
     }

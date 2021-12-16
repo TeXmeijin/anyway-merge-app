@@ -1,0 +1,18 @@
+.bg {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.heading {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: blue;
+  transition: all 0.5s;
+}
+
+.heading:hover {
+  opacity: 0.5;
+  transition: all 0.5s;
+}
