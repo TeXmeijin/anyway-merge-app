@@ -41,6 +41,19 @@
   color: #128c91;
 }
 
+.heading {
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.listQiita {
+  list-style-type: none;
+  background: url(/images/qiita.png) no-repeat left center;
+  margin-left: -1.5em;
+  padding-left: 1.5em;
+  background-size: 1.2em;
+}
+
 .listTwitter {
   list-style-type: none;
   background: url(/images/twitter-circle-blue.svg) no-repeat left center;
@@ -48,10 +61,15 @@
   padding-left: 1.5em;
   background-size: 1.2em;
 }
+
 .listGitHub {
   list-style-type: none;
   background: url(/images/github-64px.png) no-repeat left center;
   margin-left: -1.5em;
   padding-left: 1.5em;
   background-size: 1.2em;
+}
+
+.additionalSection {
+  margin-top: 16px;
 }

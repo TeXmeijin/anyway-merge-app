@@ -8,7 +8,7 @@ type Props = {
 
 const ContributerHeading = (props: Props) => {
   const { children, iconUrl } = props;
-  const iconSize = 50;
+  const iconSize = 128;
 
   return (
     <div className={styles.wrapper}>
@@ -21,7 +21,7 @@ const ContributerHeading = (props: Props) => {
           alt="icon"
         />
       )}
-      <h1 className={styles.container}>{children}</h1>
+      {children}
     </div>
   );
 };

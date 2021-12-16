@@ -211,4 +211,20 @@ export const contributors: Contributor[] = [
       },
     ],
   },
+  {
+    name: "だら",
+    slug: "dala00",
+    description:
+      "フリーのWebエンジニアです。サーバーもフロントもアプリもやります。色々サービス作ってます。",
+    links: [
+      {
+        name: "Twitter",
+        url: "https://twitter.com/dala00",
+      },
+      {
+        name: "ポートフォリオ",
+        url: "https://www.alphabrend.co.jp",
+      },
+    ],
+  },
 ];
