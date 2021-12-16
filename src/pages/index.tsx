@@ -66,6 +66,11 @@ const Home: WithLayout<NextPage> = () => {
                   <a>Spinner!</a>
                 </Link>
               </li>
+              <li className={styles.listitem}>
+                <Link href={pagesPath.sandbox.particles_animation.$url()}>
+                  <a>Particles Animation!</a>
+                </Link>
+              </li>
             </ul>
           </h2>
         </main>
