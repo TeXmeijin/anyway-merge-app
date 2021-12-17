@@ -11,7 +11,7 @@ const ContributorsList = () => {
     <div>
       <ul className={homeStyles.list}>
         {contributors.map((member) => (
-          <ContributorsListMember key={member.toString()} member={member} />
+          <ContributorsListMember key={member.slug} member={member} />
         ))}
       </ul>
     </div>
