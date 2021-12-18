@@ -2,7 +2,7 @@ import ErrorPage from "next/error";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import styles from "./styles.module.css";
-import ContributorHeading from "~/components/atoms/contributer-heading/index";
+import ContributorHeading from "~/components/atoms/contributor-heading/index";
 import Seo from "~/components/Seo";
 import { contributors } from "~/data";
 import { useContributors } from "~/hooks/useContributors";
