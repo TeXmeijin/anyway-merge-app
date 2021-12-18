@@ -6,7 +6,7 @@ type Props = {
   iconUrl?: string;
 };
 
-const ContributerHeading = (props: Props) => {
+const ContributorHeading = (props: Props) => {
   const { children, iconUrl } = props;
   const iconSize = 128;
 
@@ -26,4 +26,4 @@ const ContributerHeading = (props: Props) => {
   );
 };
 
-export default ContributerHeading;
+export default ContributorHeading;

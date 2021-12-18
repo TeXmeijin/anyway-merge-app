@@ -10,6 +10,12 @@
   left: 500px;
 }
 
+@media (max-width: 768px) {
+  .tree {
+    left: 250px;
+  }
+}
+
 .santa {
   position: absolute;
   top: 60px;

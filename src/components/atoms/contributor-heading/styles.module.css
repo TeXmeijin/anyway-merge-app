@@ -2,6 +2,12 @@
   display: flex;
 }
 
+@media (max-width: 576px) {
+  .wrapper {
+    display: block;
+  }
+}
+
 .icon {
   margin-right: 15px;
   border-radius: 50%;

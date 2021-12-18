@@ -227,4 +227,24 @@ export const contributors: Contributor[] = [
       },
     ],
   },
+  {
+    name: "so_so",
+    slug: "sonishimura",
+    description:
+      "リードフロントエンドエンジニア@Gemcook, Inc.\nReact,Next.js,GraphQLとその周辺技術が好きです。最近Rustに興味あります。",
+    links: [
+      {
+        name: "Twitter",
+        url: "https://twitter.com/so_so_1515",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/sonishimura",
+      },
+      {
+        name: "Zenn",
+        url: "https://zenn.dev/so_nishimura",
+      },
+    ],
+  },
 ];
