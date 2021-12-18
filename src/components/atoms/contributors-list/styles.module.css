@@ -1,11 +1,18 @@
 .link {
   display: flex;
+  align-items: center;
   margin: 10px 0;
   font-weight: bold;
 }
+
 .linkImg {
   display: block;
   width: 30px;
+  height: 30px;
   border-radius: 50%;
   margin-right: 10px;
+}
+
+.linkName {
+  text-align: left;
 }
