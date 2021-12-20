@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { VFXSpan, VFXImg } from "react-vfx";
+import { VFXSpan } from "react-vfx";
 import type { NextPage } from "next";
 import ContributorsList from "~/components/atoms/contributors-list";
-import Navbar from "~/components/atoms/navbar";
 import ReactConfMovie from "~/components/atoms/react-conf-movie";
 import Seo from "~/components/Seo";
 import { getChristmasLayout } from "~/components/templates/ChristmasLayout";
+import { getLayout } from "~/components/templates/Layout";
 import { pagesPath } from "~/libs/$path";
 import { RealtimeCursors } from "~/libs/realtime-cursor";
 import styles from "~/styles/Home.module.css";
@@ -17,8 +17,6 @@ const Home: WithLayout<NextPage> = () => {
         title="毎日誰かのプルリクを脳死でマージするアドベントカレンダー"
         description="初日に私が空っぽのNext.jsプロジェクトを作って公開しておくので、25日間毎日誰かがPull Request出して脳死でマージしていき、12月25日に何ができているでしょう？アドベントカレンダーです。"
       />
-
-      <Navbar />
 
       <div className={styles.container}>
         <main className={styles.main}>
@@ -75,29 +73,12 @@ const Home: WithLayout<NextPage> = () => {
           </h2>
         </main>
 
-        <footer className={styles.footer}>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by{" "}
-            <span className={styles.logo}>
-              <VFXImg
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                width={72}
-                height={16}
-              />
-            </span>
-          </a>
-        </footer>
         <RealtimeCursors />
       </div>
     </>
   );
 };
 
-Home.layout = getChristmasLayout();
+Home.layout = getLayout(getChristmasLayout());
 
 export default Home;

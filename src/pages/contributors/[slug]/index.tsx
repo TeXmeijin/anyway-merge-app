@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import styles from "./styles.module.css";
 import ContributorHeading from "~/components/atoms/contributor-heading/index";
 import Seo from "~/components/Seo";
+import { getLayout } from "~/components/templates/Layout";
 import { contributors } from "~/data";
 import { useContributors } from "~/hooks/useContributors";
 import { convertTextToHtml } from "~/libs/convertTextToHtml";
@@ -96,5 +97,7 @@ function ContributorPage() {
     </>
   );
 }
+
+ContributorPage.layout = getLayout();
 
 export default ContributorPage;
