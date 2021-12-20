@@ -73,3 +73,16 @@
 .additionalSection {
   margin-top: 16px;
 }
+
+.contributorsListWrapper {
+  width: 100%;
+  margin-top: 50px;
+  padding: 32px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #eaeaea;
+  box-shadow: 0.3px 0.3px 0.6px hsl(208deg 65% 37% / 0.15),
+    6.5px 7.2px 13.7px -0.2px hsl(208deg 65% 37% / 0.39),
+    15.2px 16.9px 32px -0.4px hsl(208deg 65% 37% / 0.62),
+    33.9px 37.7px 71.5px -0.6px hsl(208deg 65% 37% / 0.86);
+}

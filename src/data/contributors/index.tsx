@@ -247,4 +247,24 @@ export const contributors: Contributor[] = [
       },
     ],
   },
+  {
+    name: "しょうた（shota1995m）",
+    slug: "shota1995m",
+    description:
+      "スターフェスティバル株式会社でコードを書かせてもらっています！\nReact / ReactNativeで遊んでいます！",
+    links: [
+      {
+        name: "Twitter",
+        url: "https://twitter.com/shota1995m",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/shota1995m",
+      },
+      {
+        name: "Zenn",
+        url: "https://zenn.dev/shota1995m",
+      },
+    ],
+  },
 ];
