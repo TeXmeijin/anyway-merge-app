@@ -1,8 +1,9 @@
 import ErrorPage from "next/error";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import styles from "./styles.module.css";
 import ContributorHeading from "~/components/atoms/contributor-heading/index";
+import ContributorsList from "~/components/atoms/contributors-list";
 import Seo from "~/components/Seo";
 import { getLayout } from "~/components/templates/Layout";
 import { contributors } from "~/data";
@@ -92,6 +93,9 @@ function ContributorPage() {
               </div>
             )}
           </div>
+        </div>
+        <div className={styles.contributorsListWrapper}>
+          <ContributorsList />
         </div>
       </div>
     </>
