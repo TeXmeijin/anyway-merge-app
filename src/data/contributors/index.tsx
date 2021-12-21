@@ -285,9 +285,6 @@ export const contributors: Contributor[] = [
         name: "Zenn",
         url: "https://zenn.dev/mochi",
       },
-      {
-        neam: "",
-      },
     ],
   },
 ];
