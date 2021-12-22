@@ -14,6 +14,21 @@
     --border-color: #475569;
   }
 }
+
+/* 手動で切り替える用 */
+body[color-theme="light"] {
+  --background-color: #ffffff;
+  --background-color-2: #ffffff;
+  --text-color: #000000;
+  --border-color: #ffffff;
+}
+body[color-theme="dark"] {
+  --background-color-2: #1e293b;
+  --background-color: #0f172a;
+  --text-color: #ffffff;
+  --border-color: #475569;
+}
+
 html,
 body {
   color: var(--text-color);
