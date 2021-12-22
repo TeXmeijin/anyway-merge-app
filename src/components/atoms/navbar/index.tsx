@@ -1,7 +1,8 @@
+import { Checkbox, STYLE_TYPE } from "baseui/checkbox";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import { login, logout } from "~/features/userSlice";
 import { useAppDispatch } from "~/hooks/useRTK";
@@ -24,6 +25,24 @@ const Navbar: React.FC = () => {
     }
   };
 
+  const [isDark, setIsDark] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    type Theme = "light" | "dark" | null;
+    const theme = window.localStorage.getItem("color-theme") as Theme;
+
+    if (theme) {
+      // テーマがLocalStorageに保存されていた場合は、それを使用
+      setIsDark({ light: false, dark: true }[theme]);
+
+      // bodyのcolor-themeにthemeを手動でセットし切り替え
+      window.document.body.setAttribute("color-theme", theme);
+    } else {
+      // 保存されていない場合は、OSのデフォルトを使用
+      setIsDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }, []);
+
   return (
     <div className={styles.navbar}>
       <div>
@@ -31,6 +50,35 @@ const Navbar: React.FC = () => {
           <a>サイトロゴ</a>
         </Link>
       </div>
+      <div className={styles.spacer} />
+      {isDark !== null && (
+        <div className={styles["dark-mode-button-container"]}>
+          <span className={styles["dark-mode-button-left-label"]}>Light</span>
+          <Checkbox
+            checked={isDark}
+            onChange={() => {
+              const theme = isDark ? "light" : "dark";
+
+              // bodyのcolor-themeにthemeを手動でセットし切り替え
+              window.document.body.setAttribute("color-theme", theme);
+
+              // LocalStorageにthemeを保存
+              window.localStorage.setItem("color-theme", theme);
+
+              setIsDark(!isDark);
+            }}
+            checkmarkType={STYLE_TYPE.toggle_round}
+            overrides={{
+              Toggle: {
+                style: () => ({
+                  backgroundColor: "var(--border-color)",
+                }),
+              },
+            }}
+          />
+          <span className={styles["dark-mode-button-right-label"]}>Dark</span>
+        </div>
+      )}
       {status === "authenticated" && (
         <div>
           ログイン中：{session?.user.name}さん{" "}

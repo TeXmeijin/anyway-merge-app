@@ -5,3 +5,21 @@
   justify-content: space-between;
   border-bottom: solid 1px var(--border-color);
 }
+
+.dark-mode-button-container {
+  display: flex;
+  margin-left: 8px;
+  margin-right: 32px;
+}
+
+.dark-mode-button-left-label {
+  margin-right: -6px;
+}
+
+.dark-mode-button-right-label {
+  margin-left: 2px;
+}
+
+.spacer {
+  flex-grow: 1;
+}

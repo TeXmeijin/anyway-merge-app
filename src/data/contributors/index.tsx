@@ -287,4 +287,24 @@ export const contributors: Contributor[] = [
       },
     ],
   },
+  {
+    name: "とも（Tomoharu Watanabe）",
+    slug: "watatomo1216",
+    description:
+      "ダークモードの手動切り替えに対応しました。普段はフロントエンドで遊んでいるN高生です。",
+    links: [
+      {
+        name: "GitHub",
+        url: "https://github.com/WTomoharu",
+      },
+      {
+        name: "Twitter",
+        url: "https://twitter.com/tomoharu_dev",
+      },
+      {
+        name: "Portfolio(tomoharu.dev)",
+        url: "https://tomoharu.dev",
+      },
+    ],
+  },
 ];
