@@ -28,7 +28,19 @@ const Navbar: React.FC = () => {
   const [isDark, setIsDark] = useState<boolean | null>(null);
 
   useEffect(() => {
-    setIsDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    type Theme = "light" | "dark" | null;
+    const theme = window.localStorage.getItem("color-theme") as Theme;
+
+    if (theme) {
+      // テーマがLocalStorageに保存されていた場合は、それを使用
+      setIsDark({ light: false, dark: true }[theme]);
+
+      // bodyのcolor-themeにthemeを手動でセットし切り替え
+      window.document.body.setAttribute("color-theme", theme);
+    } else {
+      // 保存されていない場合は、OSのデフォルトを使用
+      setIsDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
   }, []);
 
   return (
@@ -49,6 +61,9 @@ const Navbar: React.FC = () => {
 
               // bodyのcolor-themeにthemeを手動でセットし切り替え
               window.document.body.setAttribute("color-theme", theme);
+
+              // LocalStorageにthemeを保存
+              window.localStorage.setItem("color-theme", theme);
 
               setIsDark(!isDark);
             }}
