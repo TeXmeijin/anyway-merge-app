@@ -6,11 +6,12 @@
 
   display: flex;
   flex-direction: column;
+  background-color: var(--background-color);
 }
 
 .content {
   border-radius: 16px;
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--border-color);
   box-shadow: 0.3px 0.3px 0.6px hsl(208deg 65% 37% / 0.15),
     6.5px 7.2px 13.7px -0.2px hsl(208deg 65% 37% / 0.39),
     15.2px 16.9px 32px -0.4px hsl(208deg 65% 37% / 0.62),
@@ -78,9 +79,9 @@
   width: 100%;
   margin-top: 50px;
   padding: 32px;
-  background: #fff;
+  background: var(--background-color);
   border-radius: 16px;
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--border-color);
   box-shadow: 0.3px 0.3px 0.6px hsl(208deg 65% 37% / 0.15),
     6.5px 7.2px 13.7px -0.2px hsl(208deg 65% 37% / 0.39),
     15.2px 16.9px 32px -0.4px hsl(208deg 65% 37% / 0.62),

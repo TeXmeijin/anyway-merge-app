@@ -267,4 +267,24 @@ export const contributors: Contributor[] = [
       },
     ],
   },
+  {
+    name: "もち",
+    slug: "mochi",
+    description:
+      "もちです。サイトをダークモードに対応しました。React/TypeScripで遊んでます",
+    links: [
+      {
+        name: "Twitter",
+        url: "https://twitter.com/mochi_749",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/mochi-sann",
+      },
+      {
+        name: "Zenn",
+        url: "https://zenn.dev/mochi",
+      },
+    ],
+  },
 ];

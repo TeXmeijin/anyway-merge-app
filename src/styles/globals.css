@@ -1,5 +1,23 @@
+/* @media (prefers-color-scheme: light) { */
+:root {
+  --background-color: #ffffff;
+  --background-color-2: #ffffff;
+  --text-color: #000000;
+  --border-color: #ffffff;
+}
+/* } */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color-2: #1e293b;
+    --background-color: #0f172a;
+    --text-color: #ffffff;
+    --border-color: #475569;
+  }
+}
 html,
 body {
+  color: var(--text-color);
+  background-color: var(--background-color);
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,

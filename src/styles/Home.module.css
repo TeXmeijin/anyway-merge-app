@@ -19,7 +19,7 @@
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid var(--border-color);
   justify-content: center;
   align-items: center;
 }
@@ -87,4 +87,10 @@
 .logo {
   height: 1em;
   margin-left: 0.5rem;
+}
+@media (prefers-color-scheme: dark) {
+  .code {
+    background-color: #000000;
+    color: #fff;
+  }
 }
