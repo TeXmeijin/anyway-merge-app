@@ -307,4 +307,16 @@ export const contributors: Contributor[] = [
       },
     ],
   },
+  {
+    name: "medy",
+    slug: "dumblepy",
+    description:
+      "クリプト業界にいてサーバーサイド・フロントエンド・スマートコントラクトを全てNimで書きたい人",
+    links: [
+      {
+        name: "Twitter",
+        url: "https://twitter.com/dumblepytech1",
+      },
+    ],
+  },
 ];
