@@ -13,7 +13,7 @@ const Nim: NextPage = () => {
     let requestInterval = setInterval(async () => {
       let res = await makeRequest();
       setBtc(res);
-      setTime(new Date());
+      setTime(Date.now());
     }, 3000);
 
     return () => {
@@ -33,7 +33,7 @@ const Nim: NextPage = () => {
         <section>
           <h2>BTCの値段</h2>
           <p>{time.toLocaleString()}</p>
-          <table border="1">
+          <table>
             <tbody>
               <tr>
                 <td>USD</td>

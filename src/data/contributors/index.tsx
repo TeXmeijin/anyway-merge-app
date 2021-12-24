@@ -309,9 +309,9 @@ export const contributors: Contributor[] = [
   },
   {
     name: "medy",
-    slug: "medy",
+    slug: "dumblepy",
     description:
-      "クリプト業界にいてNimでサーバーサイド・フロントエンド・スマートコントラクトを全てNimで書きたい人",
+      "クリプト業界にいてサーバーサイド・フロントエンド・スマートコントラクトを全てNimで書きたい人",
     links: [
       {
         name: "Twitter",
