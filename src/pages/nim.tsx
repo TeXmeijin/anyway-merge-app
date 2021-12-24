@@ -31,8 +31,8 @@ const Nim: NextPage = () => {
         <Navbar />
         <h1>Nimのページ</h1>
         <section>
-          <h2>BTCの値段</h2>
-          <p>{time.toLocaleString()}</p>
+          <h2>ビットコインの値段</h2>
+          <p>{new Date(time).toLocaleString()}</p>
           <table>
             <tbody>
               <tr>
