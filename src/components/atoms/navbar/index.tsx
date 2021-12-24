@@ -51,6 +51,9 @@ const Navbar: React.FC = () => {
         </Link>
       </div>
       <div className={styles.spacer} />
+      <div>
+        <Link href="/nim">Nimのページ</Link>
+      </div>
       {isDark !== null && (
         <div className={styles["dark-mode-button-container"]}>
           <span className={styles["dark-mode-button-left-label"]}>Light</span>
