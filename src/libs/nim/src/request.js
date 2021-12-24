@@ -2,120 +2,71 @@
 var framePtr = null;
 var excHandler = 0;
 var lastJSError = null;
-var NTI33554435 = {
-  size: 0,
-  kind: 36,
-  base: null,
-  node: null,
-  finalizer: null,
-};
-var NTI469762051 = {
-  size: 0,
-  kind: 18,
-  base: null,
-  node: null,
-  finalizer: null,
-};
-var NNI469762051 = {
-  kind: 2,
-  len: 3,
-  offset: 0,
-  typ: null,
-  name: null,
-  sons: [
-    {
-      kind: 1,
-      offset: "usd",
-      len: 0,
-      typ: NTI33554435,
-      name: "usd",
-      sons: null,
-    },
-    {
-      kind: 1,
-      offset: "eur",
-      len: 0,
-      typ: NTI33554435,
-      name: "eur",
-      sons: null,
-    },
-    {
-      kind: 1,
-      offset: "gbp",
-      len: 0,
-      typ: NTI33554435,
-      name: "gbp",
-      sons: null,
-    },
-  ],
-};
+var NTI33554435 = {size: 0,kind: 36,base: null,node: null,finalizer: null};
+var NTI469762051 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
+var NNI469762051 = {kind: 2, len: 3, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "usd", len: 0, typ: NTI33554435, name: "usd", sons: null}, 
+{kind: 1, offset: "eur", len: 0, typ: NTI33554435, name: "eur", sons: null}, 
+{kind: 1, offset: "gbp", len: 0, typ: NTI33554435, name: "gbp", sons: null}]};
 NTI469762051.node = NNI469762051;
 
 function setConstr() {
-  var result = {};
-  for (var i = 0; i < arguments.length; ++i) {
-    var x = arguments[i];
-    if (typeof x == "object") {
-      for (var j = x[0]; j <= x[1]; ++j) {
-        result[j] = true;
+        var result = {};
+    for (var i = 0; i < arguments.length; ++i) {
+      var x = arguments[i];
+      if (typeof(x) == "object") {
+        for (var j = x[0]; j <= x[1]; ++j) {
+          result[j] = true;
+        }
+      } else {
+        result[x] = true;
       }
-    } else {
-      result[x] = true;
     }
-  }
-  return result;
+    return result;
+  
+
+  
 }
 var ConstSet1 = setConstr(17, 16, 4, 18, 27, 19, 23, 22, 21);
 
 function nimCopy(dest_33557141, src_33557142, ti_33557143) {
   var result_33557152 = null;
 
-  switch (ti_33557143.kind) {
+    switch (ti_33557143.kind) {
     case 21:
     case 22:
     case 23:
     case 5:
-      if (!isFatPointer_33557132(ti_33557143)) {
-        result_33557152 = src_33557142;
-      } else {
+      if (!(isFatPointer_33557132(ti_33557143))) {
+      result_33557152 = src_33557142;
+      }
+      else {
         result_33557152 = [src_33557142[0], src_33557142[1]];
       }
-
+      
       break;
     case 19:
-      if (dest_33557141 === null || dest_33557141 === undefined) {
+            if (dest_33557141 === null || dest_33557141 === undefined) {
         dest_33557141 = {};
-      } else {
-        for (var key in dest_33557141) {
-          delete dest_33557141[key];
-        }
       }
-      for (var key in src_33557142) {
-        dest_33557141[key] = src_33557142[key];
+      else {
+        for (var key in dest_33557141) { delete dest_33557141[key]; }
       }
+      for (var key in src_33557142) { dest_33557141[key] = src_33557142[key]; }
       result_33557152 = dest_33557141;
-
+    
       break;
     case 18:
     case 17:
-      if (!(ti_33557143.base == null)) {
-        result_33557152 = nimCopy(
-          dest_33557141,
-          src_33557142,
-          ti_33557143.base
-        );
-      } else {
-        if (ti_33557143.kind == 17) {
-          result_33557152 =
-            dest_33557141 === null || dest_33557141 === undefined
-              ? { m_type: ti_33557143 }
-              : dest_33557141;
-        } else {
-          result_33557152 =
-            dest_33557141 === null || dest_33557141 === undefined
-              ? {}
-              : dest_33557141;
-        }
+      if (!((ti_33557143.base == null))) {
+      result_33557152 = nimCopy(dest_33557141, src_33557142, ti_33557143.base);
+      }
+      else {
+      if ((ti_33557143.kind == 17)) {
+      result_33557152 = (dest_33557141 === null || dest_33557141 === undefined) ? {m_type: ti_33557143} : dest_33557141;
+      }
+      else {
+        result_33557152 = (dest_33557141 === null || dest_33557141 === undefined) ? {} : dest_33557141;
+      }
       }
       nimCopyAux(result_33557152, src_33557142, ti_33557143.node);
       break;
@@ -123,174 +74,141 @@ function nimCopy(dest_33557141, src_33557142, ti_33557143) {
     case 4:
     case 27:
     case 16:
-      if (src_33557142 === null) {
+            if (src_33557142 === null) {
         result_33557152 = null;
-      } else {
-        if (
-          dest_33557141 === null ||
-          dest_33557141 === undefined ||
-          dest_33557141.length != src_33557142.length
-        ) {
+      }
+      else {
+        if (dest_33557141 === null || dest_33557141 === undefined || dest_33557141.length != src_33557142.length) {
           dest_33557141 = new Array(src_33557142.length);
         }
         result_33557152 = dest_33557141;
         for (var i = 0; i < src_33557142.length; ++i) {
-          result_33557152[i] = nimCopy(
-            result_33557152[i],
-            src_33557142[i],
-            ti_33557143.base
-          );
+          result_33557152[i] = nimCopy(result_33557152[i], src_33557142[i], ti_33557143.base);
         }
       }
-
+    
       break;
     case 28:
-      if (src_33557142 !== null) {
+            if (src_33557142 !== null) {
         result_33557152 = src_33557142.slice(0);
       }
-
+    
       break;
-    default:
+    default: 
       result_33557152 = src_33557142;
       break;
-  }
+    }
 
   return result_33557152;
+
 }
 var objectID_671088802 = [0];
 
-function then_469762175(
-  future_469762178,
-  onSuccess_469762179,
-  onReject_469762180
-) {
+function then_469762175(future_469762178, onSuccess_469762179, onReject_469762180) {
   var result_469762181 = null;
 
   BeforeRet: do {
     var ret_469762196 = null;
-    ret_469762196 = future_469762178.then(
-      onSuccess_469762179,
-      onReject_469762180
-    );
+    ret_469762196 = future_469762178.then(onSuccess_469762179, onReject_469762180)
     result_469762181 = ret_469762196;
     break BeforeRet;
   } while (false);
 
   return result_469762181;
+
 }
 
-function then_469762134(
-  future_469762137,
-  onSuccess_469762138,
-  onReject_469762139
-) {
+function then_469762134(future_469762137, onSuccess_469762138, onReject_469762139) {
   var result_469762140 = null;
 
   BeforeRet: do {
     var ret_469762170 = null;
-    ret_469762170 = future_469762137.then(
-      onSuccess_469762138,
-      onReject_469762139
-    );
+    ret_469762170 = future_469762137.then(onSuccess_469762138, onReject_469762139)
     result_469762140 = ret_469762170;
     break BeforeRet;
   } while (false);
 
   return result_469762140;
+
 }
 
 function isFatPointer_33557132(ti_33557133) {
   var result_33557134 = false;
 
   BeforeRet: do {
-    result_33557134 = !(ConstSet1[ti_33557133.base.kind] != undefined);
+    result_33557134 = !((ConstSet1[ti_33557133.base.kind] != undefined));
     break BeforeRet;
   } while (false);
 
   return result_33557134;
+
 }
 
 function nimCopyAux(dest_33557145, src_33557146, n_33557147) {
-  switch (n_33557147.kind) {
+    switch (n_33557147.kind) {
     case 0:
       break;
     case 1:
-      dest_33557145[n_33557147.offset] = nimCopy(
-        dest_33557145[n_33557147.offset],
-        src_33557146[n_33557147.offset],
-        n_33557147.typ
-      );
-
+            dest_33557145[n_33557147.offset] = nimCopy(dest_33557145[n_33557147.offset], src_33557146[n_33557147.offset], n_33557147.typ);
+    
       break;
     case 2:
-      for (var i = 0; i < n_33557147.sons.length; i++) {
-        nimCopyAux(dest_33557145, src_33557146, n_33557147.sons[i]);
-      }
-
+          for (var i = 0; i < n_33557147.sons.length; i++) {
+      nimCopyAux(dest_33557145, src_33557146, n_33557147.sons[i]);
+    }
+    
       break;
     case 3:
-      dest_33557145[n_33557147.offset] = nimCopy(
-        dest_33557145[n_33557147.offset],
-        src_33557146[n_33557147.offset],
-        n_33557147.typ
-      );
+            dest_33557145[n_33557147.offset] = nimCopy(dest_33557145[n_33557147.offset], src_33557146[n_33557147.offset], n_33557147.typ);
       for (var i = 0; i < n_33557147.sons.length; ++i) {
         nimCopyAux(dest_33557145, src_33557146, n_33557147.sons[i][1]);
       }
-
+    
       break;
-  }
+    }
+
+  
 }
 
 function new_469762222(usd_469762225, eur_469762226, gbp_469762227) {
-  var result_469762228 = { usd: 0.0, eur: 0.0, gbp: 0.0 };
+  var result_469762228 = ({usd: 0.0, eur: 0.0, gbp: 0.0});
 
   BeforeRet: do {
-    result_469762228 = nimCopy(
-      result_469762228,
-      { usd: usd_469762225, eur: eur_469762226, gbp: gbp_469762227 },
-      NTI469762051
-    );
+    result_469762228 = nimCopy(result_469762228, {usd: usd_469762225, eur: eur_469762226, gbp: gbp_469762227}, NTI469762051);
     break BeforeRet;
   } while (false);
 
   return result_469762228;
+
 }
 async function makeRequest_469762087() {
-  function HEX3Aanonymous_469762122(response_469762123) {
-    var result_469762124 = null;
+    
+function HEX3Aanonymous_469762122(response_469762123) {
+      var result_469762124 = null;
 
-    result_469762124 = response_469762123.json();
+        result_469762124 = response_469762123.json();
 
-    return result_469762124;
-  }
+      return result_469762124;
 
-  function HEX3Aanonymous_469762172(json_469762173) {
-    res_469762099 = json_469762173;
-  }
+    }
+    
+function HEX3Aanonymous_469762172(json_469762173) {
+        res_469762099 = json_469762173;
+
+      
+    }
 
   var result_469762089 = null;
 
   BeforeRet: do {
     var res_469762099 = {};
-    await then_469762175(
-      then_469762134(
-        fetch("https://api.coindesk.com/v1/bpi/currentprice.json"),
-        HEX3Aanonymous_469762122,
-        null
-      ),
-      HEX3Aanonymous_469762172,
-      null
-    );
-    var btcRate_469762238 = new_469762222(
-      res_469762099["bpi"]["USD"]["rate_float"],
-      res_469762099["bpi"]["EUR"]["rate_float"],
-      res_469762099["bpi"]["GBP"]["rate_float"]
-    );
-    result_469762089 = btcRate_469762238;
+    (await then_469762175(then_469762134(fetch("https://api.coindesk.com/v1/bpi/currentprice.json"), HEX3Aanonymous_469762122, null), HEX3Aanonymous_469762172, null));
+    var btcRate_469762238 = new_469762222((res_469762099["bpi"]["USD"]["rate_float"]), (res_469762099["bpi"]["EUR"]["rate_float"]), (res_469762099["bpi"]["GBP"]["rate_float"]));
+    result_469762089 = (btcRate_469762238);
     break BeforeRet;
   } while (false);
 
   return result_469762089;
+
 }
 module.exports.makeRequest = makeRequest_469762087;

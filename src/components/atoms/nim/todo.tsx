@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import type { NextPage } from "next";
-import { nimSetTodo, nimLoadTodos } from "~/libs/nim";
+import { nimSetTodo, nimLoadTodos, nimDeleteTodo } from "~/libs/nim";
 
 const NimTodo: NextPage = () => {
   const [todoDraft, setTodoDraft] = useState<string>("");
@@ -13,7 +13,8 @@ const NimTodo: NextPage = () => {
   };
 
   const deleteTodo = (num: number) => {
-    console.log(num);
+    nimDeleteTodo(num);
+    setTodos(nimLoadTodos());
   };
 
   useEffect(() => {
@@ -33,16 +34,16 @@ const NimTodo: NextPage = () => {
       <button onClick={setTodo}>登録</button>
       <table>
         <tbody>
-          {todos.map((todo, i) => {
-            <tr>
+          {todos.map((todo, i) => (
+            <tr key={i + 1}>
               <td>{todo}</td>
               <td>
                 <button type="button" onClick={() => deleteTodo(i)}>
                   削除
                 </button>
               </td>
-            </tr>;
-          })}
+            </tr>
+          ))}
         </tbody>
       </table>
     </section>

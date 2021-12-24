@@ -1,3 +1,3 @@
 export { makeRequest } from "./src/request";
 
-export { nimSetTodo, nimLoadTodos } from "./src/todoapp";
+export { nimSetTodo, nimLoadTodos, nimDeleteTodo } from "./src/todoapp";
