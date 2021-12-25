@@ -319,4 +319,20 @@ export const contributors: Contributor[] = [
       },
     ],
   },
+  {
+    name: "kyoya0819",
+    slug: "kyoya0819",
+    description:
+      "千葉県で高校生してます。バックエンドエンジニアですが、最近はフロントエンドしか書いてないです。（え？",
+    links: [
+      {
+        name: "Twitter",
+        url: "https://twitter.com/kyoya0819",
+      },
+      {
+        name: "HP",
+        url: "https://kyoya0819.com",
+      },
+    ],
+  },
 ];

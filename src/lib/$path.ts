@@ -9,6 +9,9 @@ export const pagesPath = {
   dashboard: {
     $url: (url?: { hash?: string }) => ({ pathname: '/dashboard' as const, hash: url?.hash })
   },
+  makyo: {
+    $url: (url?: { hash?: string }) => ({ pathname: '/makyo' as const, hash: url?.hash })
+  },
   nim: {
     $url: (url?: { hash?: string }) => ({ pathname: '/nim' as const, hash: url?.hash })
   },

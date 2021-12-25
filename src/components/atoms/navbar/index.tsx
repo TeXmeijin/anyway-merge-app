@@ -3,7 +3,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 import { login, logout } from "~/features/userSlice";
 import { useAppDispatch } from "~/hooks/useRTK";
 
@@ -51,9 +51,14 @@ const Navbar: React.FC = () => {
         </Link>
       </div>
       <div className={styles.spacer} />
-      <div>
-        <Link href="/nim">Nimのページ</Link>
-      </div>
+      <ul className={styles.menu}>
+        <li>
+          <Link href="/nim">Nimのページ</Link>
+        </li>
+        <li>
+          <Link href="/makyo">魔境のページ</Link>
+        </li>
+      </ul>
       {isDark !== null && (
         <div className={styles["dark-mode-button-container"]}>
           <span className={styles["dark-mode-button-left-label"]}>Light</span>
