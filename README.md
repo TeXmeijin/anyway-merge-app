@@ -51,6 +51,9 @@ Firebase 等の PaaS を接続する実装をしてセットアップ手順を R
 - `/data/contributors` にデータを置いているので、開発に関わった方が自己紹介とかを書いていいものとします
 - 自己紹介や告知などのコンテンツは `/data/contributors/components.tsx` に書いて `/data/contributors` にて import してください
 
+#### Logo Lisense
+<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="スマシコン">スマシコン</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
 ## ToDo
 
 - ~~脳死マージの自動化~~ [#10](https://github.com/TeXmeijin/anyway-merge-app/pull/10)
