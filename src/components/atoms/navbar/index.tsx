@@ -1,9 +1,11 @@
 import { Checkbox, STYLE_TYPE } from "baseui/checkbox";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
+import { VFXSpan } from "react-vfx";
 import { login, logout } from "~/features/userSlice";
 import { useAppDispatch } from "~/hooks/useRTK";
 
@@ -45,9 +47,21 @@ const Navbar: React.FC = () => {
 
   return (
     <div className={styles.navbar}>
-      <div>
+      <div className={styles.logo}>
         <Link href="/">
-          <a>サイトロゴ</a>
+          <a>
+            <Image
+              src="/images/logo-header.svg"
+              alt="logo"
+              width="30"
+              height="30"
+            />
+          </a>
+        </Link>
+        <Link href="/">
+          <a>
+            <VFXSpan shader="">AnywayMerge</VFXSpan>
+          </a>
         </Link>
       </div>
       <div className={styles.spacer} />

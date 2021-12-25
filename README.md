@@ -1,5 +1,10 @@
 # 🎄 参加方法(重要)
 
+## Anyway Merge App
+<p align="center">
+  <img src="public/images/logo-readme.svg" />
+</p>
+
 - ブランチを適当に切って作業し、Pull Request を出してください
   - Fork したリポジトリからの Pull Request で OK です
 - 私は Draft ではない Pull Request を見たら脳死でマージしてしまうので、作成途中で Pull Request を作る方は Draft にしてください
