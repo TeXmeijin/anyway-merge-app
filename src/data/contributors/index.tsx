@@ -332,7 +332,8 @@ export const contributors: Contributor[] = [
       {
         name: "HP",
         url: "https://kyoya0819.com",
-	  }
+      },
+    ],
   },
   {
     name: "pacy",
