@@ -1,3 +1,8 @@
+# Anyway Merge App
+<p align="center">
+  <img src="public/images/logo-readme.svg" />
+</p>
+
 # 🎄 参加方法(重要)
 
 - ブランチを適当に切って作業し、Pull Request を出してください
@@ -45,6 +50,11 @@ Firebase 等の PaaS を接続する実装をしてセットアップ手順を R
 - 実装されたソースコードは MIT ライセンスとし、アドベントカレンダー終了後も作成者(@mejileben)の GitHub アカウントに残しておきます
 - `/data/contributors` にデータを置いているので、開発に関わった方が自己紹介とかを書いていいものとします
 - 自己紹介や告知などのコンテンツは `/data/contributors/components.tsx` に書いて `/data/contributors` にて import してください
+
+#### Logo Lisense
+<div>Logos made by <a href="https://www.flaticon.com/authors/smashicons" title="スマシコン">スマシコン</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+public/images/logo-readme.svg  
+public/images/logo-header.svg
 
 ## ToDo
 

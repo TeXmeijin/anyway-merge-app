@@ -335,4 +335,24 @@ export const contributors: Contributor[] = [
       },
     ],
   },
+  {
+    name: "pacy",
+    slug: "lilpacy",
+    description:
+      "ダンスとサブカルが好きなwebエンジニアです🧑‍💻\n 最近はブロックチェーン周りも触っています。",
+    links: [
+      {
+        name: "GitHub",
+        url: "https://github.com/lilpacy",
+      },
+      {
+        name: "Twitter",
+        url: "https://twitter.com/lilpacy_",
+      },
+      {
+        name: "Portfolio",
+        url: "https://portfolio.lilpacy.now.sh",
+      },
+    ],
+  },
 ];

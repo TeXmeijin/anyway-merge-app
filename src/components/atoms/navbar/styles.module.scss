@@ -6,6 +6,14 @@
   border-bottom: solid 1px var(--border-color);
 }
 
+.logo {
+  width: 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .dark-mode-button-container {
   display: flex;
   margin-left: 8px;
